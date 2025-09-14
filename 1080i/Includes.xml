@@ -14,6 +14,8 @@
     <include file="Includes_Custom_Items.xml"/>
     <include file="Includes_Games.xml"/>
     <include file="Includes_Weather.xml"/>
+<!-- TF 09/2025 New include file to support redesigned epg screen. -->
+    <include file="Includes_Guide.xml"/>
 
     <!-- Views -->
     <include file="View_50_List.xml"/>

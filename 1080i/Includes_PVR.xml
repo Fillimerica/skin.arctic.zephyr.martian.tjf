@@ -2170,26 +2170,26 @@
     </include>
 
 	<include name="PVRGuideChannelDetails">
-		<param name="top" default="10" />
+		<param name="height" default="150" />
 		<param name="bottom" default="10" />
 		<param name="visible" default="true" />		
 		<definition>
 	        <control type="group">
-	            <top>$PARAM[top]</top>
+	            <height>$PARAM[height]</height>
 	            <bottom>$PARAM[bottom]</bottom>
 	            <left>30</left>
-	            <right>30</right>
+	            <right>0</right>
 	            <visible>$PARAM[visible]</visible>
 	            <control type="group">
 	                <orientation>horizontal</orientation>
 	                <left>0</left>
-	                <right>240</right>
+	                <right>250</right>
 	                <top>1</top>
 	                <control type="label">
 	                    <width max="710">auto</width>
 	                    <aligny>center</aligny>
 	                    <height>64</height>
-	                    <font>MediumBold</font>
+	                    <font>Name1</font>
 	                    <textcolor>PanelWhite100</textcolor>
 	                    <selectedcolor>PanelWhite100</selectedcolor>
 	                    <label>$INFO[ListItem.Title]</label>
@@ -2201,27 +2201,55 @@
 	                    <align>right</align>
 	                    <right>0</right>
 	                    <height>64</height>
-	                    <font>MediumBold</font>
+	                    <font>Name1</font>
 	                    <textcolor>PanelWhite100</textcolor>
 	                    <selectedcolor>PanelWhite100</selectedcolor>
 	                    <label>$INFO[ListItem.Genre,, • ]$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ,]</label>
 	                </control>
 	            </control>
+<!-- TF 09/2025 Added missing episode number and name to the grid display. -->
+				<control type="group">
+					<orientation>horizontal</orientation>
+	                <left>0</left>
+	                <right>250</right>
+					<top>34</top>
+					<control type="label">
+						<width max="710">auto</width>
+						<aligny>center</aligny>
+						<!-- <height>64</height> -->
+						<font>Small</font>
+						<textcolor>PanelWhite100</textcolor>
+						<selectedcolor>PanelWhite100</selectedcolor>
+						<label>[I]$INFO[ListItem.EpisodeName][/I]</label>
+					</control>
+					<control type="label">
+						<visible>!String.IsEmpty(ListItem.Season)</visible>
+						<width max="710">auto</width>
+						<aligny>center</aligny>
+						<align>right</align>
+						<right>0</right>
+						<!-- <height>64</height> -->
+						<font>Small</font>
+						<textcolor>PanelWhite100</textcolor>
+						<selectedcolor>PanelWhite100</selectedcolor>
+						<label>[I]Season: $INFO[ListItem.Season] Episode: $INFO[ListItem.Episode] [/I]</label>
+					</control>
+				</control>
 	            <control type="textbox">
-	                <top>59</top>
-	                <right>240</right>
-	                <height>75</height>
-	                <align>justify</align>
-	                <font>TinyPlot</font>
+	                <top>80</top>
+	                <right>250</right>
+	                <height>120</height>
+	                <align>left</align>
+	                <font>Tiny24</font>
 	                <textcolor>PanelWhite70</textcolor>
 	                <selectedcolor>PanelWhite70</selectedcolor>
-	                <label>$INFO[ListItem.EpisodeName,,[CR]]$INFO[ListItem.Plot]</label>
+	                <label>$INFO[ListItem.Plot]</label>
 	            </control>
 	            <control type="image">
-	                <right>-15</right>
-	                <top>10</top>
-	                <width>240</width>
-	                <bottom>10</bottom>
+	                <right>20</right>
+	                <top>35</top>
+	                <width>180</width>
+	                <!-- <bottom>20</bottom> -->
 	                <aspectratio align="center" aligny="center">keep</aspectratio>
 	                <texture>$VAR[ChannelListEPGIconVar]</texture>
 	                <fadetime>PosterFanartFadetime</fadetime>
