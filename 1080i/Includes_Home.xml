@@ -1233,14 +1233,14 @@
                     <visible>!Skin.HasSetting(global.hideborders) + [!$EXP[HomeIsModernMultiWidgets] | Skin.HasSetting(homemenu.clean.flix)]</visible>
                     <width>100%</width>
                     <height>15</height>
-                    <bottom>210</bottom>
+                    <bottom>181</bottom>
                     <texture colordiffuse="Background">common/shadow-50.png</texture>
                 </control>
                 <control type="image" description="BottomBG">
                     <visible>!$EXP[HomeIsModernMultiWidgets] | Skin.HasSetting(homemenu.clean.flix)</visible>
                     <width>100%</width>
-                    <height>220</height>
-                    <bottom>0</bottom>
+                    <height>160</height>
+                    <bottom>30</bottom>
                     <aspectratio aligny="bottom">scale</aspectratio>
                     <texture colordiffuse="Background">common/white.png</texture>
                     <animation effect="fade" start="100" end="85" time="0" condition="Skin.HasSetting(homemenu.clean.flix)">Conditional</animation>
@@ -1251,13 +1251,13 @@
                     <control type="image" description="Shadow">
                         <width>100%</width>
                         <height>16</height>
-                        <bottom>220</bottom>
+                        <bottom>190</bottom>
                         <texture flipy="true">common/shadow16B.png</texture>
                     </control>
                     <control type="image" description="Shadow">
                         <width>100%</width>
                         <height>1</height>
-                        <bottom>220</bottom>
+                        <bottom>190</bottom>
                         <texture flipy="true" colordiffuse="BoxHomerow">common/sch2.png</texture>
                     </control>
                 </control>
