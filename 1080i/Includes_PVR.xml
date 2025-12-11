@@ -175,22 +175,23 @@
     <include name="PVRInfoPanel">
         <control type="group">
             <left>70</left>
-            <width>645</width>
+            <width>642</width>
             <top>206</top>
             <height>660</height>
             <control type="group">
                 <height>370</height>
                 <control type="image">
-                    <width>642</width>
+                    <width>100%</width>
                     <height>100%</height>
                     <texture border="10" infill="false">common/$VAR[nofocus-shadow10]</texture>
                 </control>
                 <control type="image">
-                    <left>11</left>
+                    <left>10</left>
                     <top>10</top>
-                    <right>11</right>
+                    <right>10</right>
                     <bottom>10</bottom>
-                    <texture colordiffuse="Fallback" border="4" background="true">common/diffuse_box.png</texture>
+                    <texture colordiffuse="FF000000" border="10">diffuse/pvrinfo.png</texture>
+                    <visible>Player.HasVideo</visible>
                 </control>
                 <control type="videowindow">
                     <left>10</left>
@@ -202,6 +203,14 @@
                     </animation>
                     <visible>Player.HasVideo</visible>
                     <aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+                </control>
+                <control type="image">
+                    <left>10</left>
+                    <top>10</top>
+                    <right>10</right>
+                    <bottom>10</bottom>
+                    <texture colordiffuse="Fallback" border="4" background="true">common/diffuse_box.png</texture>
+                    <visible>!Player.HasVideo</visible>
                 </control>
                 <control type="image">
                     <visible>!Player.HasVideo + String.IsEmpty(Listitem.EpgEventIcon) + String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Fanart)) + String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Poster))</visible>
@@ -1209,9 +1218,9 @@
                             <control type="image">
                                 <left>40</left>
                                 <top>30</top>
-                                <width>290</width>
-                                <height>290</height>
-                                <aspectratio>scale</aspectratio>
+                                <width>270</width>
+                                <height>270</height>
+                                <aspectratio>keep</aspectratio>
                                 <texture fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
                             </control>
                             <control type="label">
@@ -1240,8 +1249,8 @@
                             <control type="textbox">
                                 <left>330</left>
                                 <right>40</right>
-                                <top>120</top>
-                                <height>108</height>
+                                <top>140</top>
+                                <height>104</height>
                                 <align>justify</align>
                                 <font>Tiny</font>
                                 <textcolor>Dark2</textcolor>
@@ -1366,9 +1375,9 @@
                             <control type="image">
                                 <left>40</left>
                                 <top>30</top>
-                                <width>290</width>
-                                <height>290</height>
-                                <aspectratio>scale</aspectratio>
+                                <width>270</width>
+                                <height>270</height>
+                                <aspectratio>keep</aspectratio>
                                 <texture fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
                             </control>
                             <control type="label">
@@ -1398,7 +1407,7 @@
                                 <left>330</left>
                                 <right>40</right>
                                 <top>140</top>
-                                <height>68</height>
+                                <height>104</height>
                                 <align>justify</align>
                                 <font>Tiny</font>
                                 <textcolor>Light2</textcolor>

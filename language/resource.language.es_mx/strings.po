@@ -917,10 +917,6 @@ msgctxt "#31256"
 msgid "Homepage"
 msgstr "Página de inicio"
 
-msgctxt "#31257"
-msgid "Extended Song Info"
-msgstr "Info de canción extendida"
-
 msgctxt "#31258"
 msgid "Fanart Thumbs"
 msgstr "Miniaturas de fanart"
@@ -1297,10 +1293,6 @@ msgctxt "#31366"
 msgid "Show Filenames"
 msgstr "Mostrar nombres de archivos"
 
-msgctxt "#31368"
-msgid "Show unwatched episodes count"
-msgstr "Mostrar cantidad de episodios no vistos"
-
 msgctxt "#31369"
 msgid "Shifted ClearArt"
 msgstr ""
@@ -1548,10 +1540,6 @@ msgstr "Utilizar jumpbar antigua (requiere script.embuary.helper)"
 msgctxt "#31438"
 msgid "Genre Poster"
 msgstr "Póster de género"
-
-msgctxt "#31441"
-msgid "RottenTomatoes & Metacritic"
-msgstr "RottenTomatoes y Metacritic"
 
 msgctxt "#31442"
 msgid "Select media flags"

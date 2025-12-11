@@ -917,10 +917,6 @@ msgctxt "#31256"
 msgid "Homepage"
 msgstr "Főoldal"
 
-msgctxt "#31257"
-msgid "Extended Song Info"
-msgstr "Bővített dal infó"
-
 msgctxt "#31258"
 msgid "Fanart Thumbs"
 msgstr "Fanart minikép"
@@ -1297,10 +1293,6 @@ msgctxt "#31366"
 msgid "Show Filenames"
 msgstr "Fájlnevek mutatása"
 
-msgctxt "#31368"
-msgid "Show unwatched episodes count"
-msgstr "Nemlátott részek száma"
-
 msgctxt "#31369"
 msgid "Shifted ClearArt"
 msgstr "Shifted ClearArt"
@@ -1548,10 +1540,6 @@ msgstr "Régi jumpbar használata (script.embuary.helper szükséges)"
 msgctxt "#31438"
 msgid "Genre Poster"
 msgstr "Műfaj poszter"
-
-msgctxt "#31441"
-msgid "RottenTomatoes & Metacritic"
-msgstr "RottenTomatoes & Metacritic"
 
 msgctxt "#31442"
 msgid "Select media flags"

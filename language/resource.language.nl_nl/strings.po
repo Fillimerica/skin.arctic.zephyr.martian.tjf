@@ -917,10 +917,6 @@ msgctxt "#31256"
 msgid "Homepage"
 msgstr "Startpagina"
 
-msgctxt "#31257"
-msgid "Extended Song Info"
-msgstr "Uitgebreide nummer informatie"
-
 msgctxt "#31258"
 msgid "Fanart Thumbs"
 msgstr "Fanart miniaturen"
@@ -1297,10 +1293,6 @@ msgctxt "#31366"
 msgid "Show Filenames"
 msgstr "Toon bestandsnamen"
 
-msgctxt "#31368"
-msgid "Show unwatched episodes count"
-msgstr "Toon niet-bekeken afleveringen teller"
-
 msgctxt "#31369"
 msgid "Shifted ClearArt"
 msgstr "Shifted ClearArt"
@@ -1548,10 +1540,6 @@ msgstr "Gebruik oude jumpbalk (vereist script.embuary.helper)"
 msgctxt "#31438"
 msgid "Genre Poster"
 msgstr "Genre poster"
-
-msgctxt "#31441"
-msgid "RottenTomatoes & Metacritic"
-msgstr "RottenTomatoes & Metacritic"
 
 msgctxt "#31442"
 msgid "Select media flags"

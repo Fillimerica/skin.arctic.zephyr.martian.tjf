@@ -917,10 +917,6 @@ msgctxt "#31256"
 msgid "Homepage"
 msgstr "Pagina principale"
 
-msgctxt "#31257"
-msgid "Extended Song Info"
-msgstr "Informazioni estese sul brano"
-
 msgctxt "#31258"
 msgid "Fanart Thumbs"
 msgstr "Anteprima fanart"
@@ -1297,10 +1293,6 @@ msgctxt "#31366"
 msgid "Show Filenames"
 msgstr "Mostra nomi file"
 
-msgctxt "#31368"
-msgid "Show unwatched episodes count"
-msgstr "Mostra conteggio episodi non visti"
-
 msgctxt "#31369"
 msgid "Shifted ClearArt"
 msgstr "ClearArt spostato"
@@ -1548,10 +1540,6 @@ msgstr "Usa vecchia barra di salto (richiede script.embuary.helper)"
 msgctxt "#31438"
 msgid "Genre Poster"
 msgstr "Poster genere"
-
-msgctxt "#31441"
-msgid "RottenTomatoes & Metacritic"
-msgstr "RottenTomatoes e Metacritic"
 
 msgctxt "#31442"
 msgid "Select media flags"

@@ -2677,7 +2677,7 @@ Improved the Furniture_Header, Furniture_Clock, and Furniture_Weather includes t
     <include name="Furniture_Flags_Audio">
         <!-- Fakelist Container for Album Count -->
         <control type="list" id="5014">
-            <visible>Container.Content(albums) | String.IsEqual(ListItem.DBType,album)</visible>
+            <visible>String.IsEqual(ListItem.DBType,album)</visible>
             <top>-3000</top>
             <left>-3000</left>
             <width>1</width>
@@ -2687,7 +2687,7 @@ Improved the Furniture_Header, Furniture_Clock, and Furniture_Weather includes t
             <content>$VAR[AlbumPath]</content>
         </control>
         <control type="group">
-            <visible>Container.Content(songs) | Container.Content(albums)</visible>
+            <visible>String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,song)</visible>
             <include>Animation.FurnitureVisible</include>
             <include content="Furniture_Flags_Audio_Include" condition="!Skin.HasSetting(furniture.flags)">
                 <param name="position_low" value="true" />
@@ -2894,39 +2894,6 @@ Improved the Furniture_Header, Furniture_Clock, and Furniture_Weather includes t
                 <textcolor>Dark1</textcolor>
                 <visible>!String.IsEmpty(ListItem.Duration) + [Control.IsVisible(500) | Control.IsVisible(503) | Control.IsVisible(51)]</visible>
             </control>
-            <control type="label">
-                <visible>!Skin.HasSetting(furniture.flagicons) + Skin.HasSetting(thumbnails.moreinfos) + !String.IsEqual(ListItem.DBType,album)</visible>
-                <width>auto</width>
-                <centertop>50%</centertop>
-                <height>64</height>
-                <align>left</align>
-                <aligny>center</aligny>
-                <label>•</label>
-                <font>Flag</font>
-                <textcolor>Dark1</textcolor>
-            </control>
-            <control type="label">
-                <visible>Skin.HasSetting(thumbnails.moreinfos) + !String.IsEqual(ListItem.DBType,album)</visible>
-                <width max="700">auto</width>
-                <centertop>50%</centertop>
-                <height>64</height>
-                <align>left</align>
-                <aligny>center</aligny>
-                <label>$INFO[ListItem.Album,  ,]</label>
-                <font>Flag</font>
-                <textcolor>Dark1</textcolor>
-            </control>
-            <control type="label">
-                <visible>Skin.HasSetting(thumbnails.moreinfos) + !String.IsEqual(ListItem.DBType,album)</visible>
-                <width>auto</width>
-                <centertop>50%</centertop>
-                <height>64</height>
-                <align>left</align>
-                <aligny>center</aligny>
-                <label>$INFO[ListItem.TrackNumber,  •  $LOCALIZE[554] ,]</label>
-                <font>Flag</font>
-                <textcolor>Dark1</textcolor>
-            </control>
         </control>
         <control type="grouplist">
             <visible>Skin.HasSetting(furniture.flagicons) + Skin.HasSetting(furniture.coloredicons)</visible>
@@ -3082,28 +3049,6 @@ Improved the Furniture_Header, Furniture_Clock, and Furniture_Weather includes t
                 <font>Flag</font>
                 <textcolor>Dark1</textcolor>
                 <visible>!String.IsEmpty(ListItem.Duration) + [Control.IsVisible(500) | Control.IsVisible(503) | Control.IsVisible(51)]</visible>
-            </control>
-            <control type="label">
-                <visible>Skin.HasSetting(thumbnails.moreinfos) + !String.IsEqual(ListItem.DBType,album)</visible>
-                <width max="700">auto</width>
-                <centertop>50%</centertop>
-                <height>64</height>
-                <align>left</align>
-                <aligny>center</aligny>
-                <label>$INFO[ListItem.Album,  ,]</label>
-                <font>Flag</font>
-                <textcolor>Dark1</textcolor>
-            </control>
-            <control type="label">
-                <visible>Skin.HasSetting(thumbnails.moreinfos) + !String.IsEqual(ListItem.DBType,album)</visible>
-                <width>auto</width>
-                <centertop>50%</centertop>
-                <height>64</height>
-                <align>left</align>
-                <aligny>center</aligny>
-                <label>$INFO[ListItem.TrackNumber,  •  $LOCALIZE[554] ,]</label>
-                <font>Flag</font>
-                <textcolor>Dark1</textcolor>
             </control>
         </control>
     </include>
@@ -3618,12 +3563,30 @@ Improved the Furniture_Header, Furniture_Clock, and Furniture_Weather includes t
     </include>
 
     <include name="ExtendedRatingFlags_Furniture">
+        <control type="image" description="TMDb Rating">
+            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.TMDb_Rating)) + Skin.HasSetting(furniture.showtmdb)</visible>
+            <centertop>50%</centertop>
+            <width>29</width>
+            <height>29</height>
+            <left>15</left>
+            <texture colordiffuse="Dark1" background="true">flags/monochrome/ratings/tmdb.png</texture>
+        </control>
+        <control type="label" description="TMDb Rating">
+            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.TMDb_Rating)) + Skin.HasSetting(furniture.showtmdb)</visible>
+            <centertop>50%</centertop>
+            <width>auto</width>
+            <height>64</height>
+            <font>Flag</font>
+            <textcolor>Dark1</textcolor>
+            <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.TMDb_Rating)]</label>
+        </control>
         <control type="image" description="IMDb_Rating">
             <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.IMDb_Rating)) + Skin.HasSetting(furniture.showimdb)</visible>
             <centertop>50%</centertop>
-            <width>52</width>
-            <height>32</height>
+            <width>50</width>
+            <height>64</height>
             <left>15</left>
+            <aspectratio align="left">keep</aspectratio>
             <texture colordiffuse="Dark1" background="true">flags/monochrome/ratings/imdb.png</texture>
         </control>
         <control type="label" description="IMDb_Rating">
@@ -3635,8 +3598,25 @@ Improved the Furniture_Header, Furniture_Clock, and Furniture_Weather includes t
             <textcolor>Dark1</textcolor>
             <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.IMDb_Rating)]</label>
         </control>          
+        <control type="image" description="Trakt Rating">
+            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trakt_Rating)) + Skin.HasSetting(furniture.showtrakt)</visible>
+            <centertop>50%</centertop>
+            <width>33</width>
+            <height>33</height>
+            <left>15</left>
+            <texture colordiffuse="Dark1" background="true">flags/monochrome/ratings/trakt.png</texture>
+        </control>
+        <control type="label" description="Trakt Rating">
+            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trakt_Rating)) + Skin.HasSetting(furniture.showtrakt)</visible>
+            <centertop>50%</centertop>
+            <width>auto</width>
+            <height>64</height>
+            <font>Flag</font>
+            <textcolor>Dark1</textcolor>
+            <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.Trakt_Rating)]</label>
+        </control>
         <control type="image" description="Metacritic">
-            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Metacritic_Rating)) + Skin.HasSetting(furniture.showtomatoesandmetacritics)</visible>
+            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Metacritic_Rating)) + Skin.HasSetting(furniture.showmetacritic)</visible>
             <centertop>50%</centertop>
             <width>33</width>
             <height>33</height>
@@ -3644,7 +3624,7 @@ Improved the Furniture_Header, Furniture_Clock, and Furniture_Weather includes t
             <texture colordiffuse="Dark1" background="true">flags/monochrome/ratings/mc.png</texture>
         </control>
         <control type="label" description="Metacritic">
-            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Metacritic_Rating)) + Skin.HasSetting(furniture.showtomatoesandmetacritics)</visible>
+            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Metacritic_Rating)) + Skin.HasSetting(furniture.showmetacritic)</visible>
             <centertop>50%</centertop>
             <width>auto</width>
             <height>64</height>
@@ -3653,7 +3633,7 @@ Improved the Furniture_Header, Furniture_Clock, and Furniture_Weather includes t
             <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.Metacritic_Rating)]%</label>
         </control>
         <control type="image" description="Rotten Tomatoes">
-            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating)) + Skin.HasSetting(furniture.showtomatoesandmetacritics)</visible>
+            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating)) + Skin.HasSetting(furniture.showtomatoes)</visible>
             <fadetime>ExtendedFlagIconsFadetime</fadetime>
             <centertop>50%</centertop>
             <width>33</width>
@@ -3662,7 +3642,7 @@ Improved the Furniture_Header, Furniture_Clock, and Furniture_Weather includes t
             <texture colordiffuse="Dark1" background="true">flags/monochrome/$VAR[RottenTomatoes]</texture>
         </control>
         <control type="label" description="Rotten Tomatoes">
-            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating)) + Skin.HasSetting(furniture.showtomatoesandmetacritics)</visible>
+            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating)) + Skin.HasSetting(furniture.showtomatoes)</visible>
             <centertop>50%</centertop>
             <width>auto</width>
             <height>64</height>
@@ -3671,7 +3651,7 @@ Improved the Furniture_Header, Furniture_Clock, and Furniture_Weather includes t
             <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating)]%</label>
         </control>
         <control type="image" description="Rotten Tomatoes">
-            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_UserMeter)) + Skin.HasSetting(furniture.showtomatoesandmetacritics)</visible>
+            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_UserMeter)) + Skin.HasSetting(furniture.showtomatoes)</visible>
             <fadetime>ExtendedFlagIconsFadetime</fadetime>
             <centertop>50%</centertop>
             <width>33</width>
@@ -3680,7 +3660,7 @@ Improved the Furniture_Header, Furniture_Clock, and Furniture_Weather includes t
             <texture colordiffuse="Dark1" background="true">flags/monochrome/$VAR[RottenTomatoesAudience]</texture>
         </control>
         <control type="label" description="Rotten Tomatoes">
-            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_UserMeter)) + Skin.HasSetting(furniture.showtomatoesandmetacritics)</visible>
+            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_UserMeter)) + Skin.HasSetting(furniture.showtomatoes)</visible>
             <centertop>50%</centertop>
             <width>auto</width>
             <height>64</height>
@@ -3691,12 +3671,30 @@ Improved the Furniture_Header, Furniture_Clock, and Furniture_Weather includes t
     </include>
     
     <include name="ExtendedRatingFlags_Furniture_Color">
+        <control type="image" description="TMDb Rating">
+            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.TMDb_Rating)) + Skin.HasSetting(furniture.showtmdb)</visible>
+            <centertop>50%</centertop>
+            <width>30</width>
+            <height>30</height>
+            <left>15</left>
+            <texture background="true">flags/color/ratings/tmdb.png</texture>
+        </control>
+        <control type="label" description="TMDb Rating">
+            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.TMDb_Rating)) + Skin.HasSetting(furniture.showtmdb)</visible>
+            <centertop>50%</centertop>
+            <width>auto</width>
+            <height>64</height>
+            <font>Flag</font>
+            <textcolor>Dark1</textcolor>
+            <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.TMDb_Rating)]</label>
+        </control>
         <control type="image" description="IMDb_Rating">
             <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.IMDb_Rating)) + Skin.HasSetting(furniture.showimdb)</visible>
             <centertop>50%</centertop>
             <width>52</width>
-            <height>32</height>
+            <height>64</height>
             <left>15</left>
+            <aspectratio align="left">keep</aspectratio>
             <texture background="true">flags/color/ratings/imdb.png</texture>
         </control>
         <control type="label" description="IMDb_Rating">
@@ -3708,16 +3706,33 @@ Improved the Furniture_Header, Furniture_Clock, and Furniture_Weather includes t
             <textcolor>Dark1</textcolor>
             <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.IMDb_Rating)]</label>
         </control>
-        <control type="image" description="Metacritic">
-            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Metacritic_Rating)) + Skin.HasSetting(furniture.showtomatoesandmetacritics)</visible>
+        <control type="image" description="Trakt Rating">
+            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trakt_Rating)) + Skin.HasSetting(furniture.showtrakt)</visible>
             <centertop>50%</centertop>
-            <width>38</width>
-            <height>38</height>
+            <width>34</width>
+            <height>34</height>
+            <left>15</left>
+            <texture background="true">flags/color/ratings/trakt.png</texture>
+        </control>
+        <control type="label" description="Trakt Rating">
+            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trakt_Rating)) + Skin.HasSetting(furniture.showtrakt)</visible>
+            <centertop>50%</centertop>
+            <width>auto</width>
+            <height>64</height>
+            <font>Flag</font>
+            <textcolor>Dark1</textcolor>
+            <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.Trakt_Rating)]</label>
+        </control>
+        <control type="image" description="Metacritic">
+            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Metacritic_Rating)) + Skin.HasSetting(furniture.showmetacritic)</visible>
+            <centertop>50%</centertop>
+            <width>34</width>
+            <height>34</height>
             <left>15</left>
             <texture background="true">flags/color/ratings/mc.png</texture>
         </control>
         <control type="label" description="Metacritic">
-            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Metacritic_Rating)) + Skin.HasSetting(furniture.showtomatoesandmetacritics)</visible>
+            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Metacritic_Rating)) + Skin.HasSetting(furniture.showmetacritic)</visible>
             <centertop>50%</centertop>
             <width>auto</width>
             <height>64</height>
@@ -3726,16 +3741,16 @@ Improved the Furniture_Header, Furniture_Clock, and Furniture_Weather includes t
             <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.Metacritic_Rating)]%</label>
         </control>
         <control type="image" description="Rotten Tomatoes">
-            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating)) + Skin.HasSetting(furniture.showtomatoesandmetacritics)</visible>
+            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating)) + Skin.HasSetting(furniture.showtomatoes)</visible>
             <fadetime>ExtendedFlagIconsFadetime</fadetime>
             <centertop>50%</centertop>
-            <width>38</width>
-            <height>38</height>
+            <width>34</width>
+            <height>34</height>
             <left>15</left>
             <texture background="true">flags/color/$VAR[RottenTomatoes]</texture>
         </control>
         <control type="label" description="Rotten Tomatoes">
-            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating)) + Skin.HasSetting(furniture.showtomatoesandmetacritics)</visible>
+            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating)) + Skin.HasSetting(furniture.showtomatoes)</visible>
             <centertop>50%</centertop>
             <width>auto</width>
             <height>64</height>
@@ -3744,16 +3759,16 @@ Improved the Furniture_Header, Furniture_Clock, and Furniture_Weather includes t
             <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating)]%</label>
         </control>
         <control type="image" description="Rotten Tomatoes">
-            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_UserMeter)) + Skin.HasSetting(furniture.showtomatoesandmetacritics)</visible>
+            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_UserMeter)) + Skin.HasSetting(furniture.showtomatoes)</visible>
             <fadetime>ExtendedFlagIconsFadetime</fadetime>
             <centertop>50%</centertop>
-            <width>38</width>
-            <height>38</height>
+            <width>34</width>
+            <height>34</height>
             <left>15</left>
             <texture background="true">flags/color/$VAR[RottenTomatoesAudience]</texture>
         </control>
         <control type="label" description="Rotten Tomatoes">
-            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_UserMeter)) + Skin.HasSetting(furniture.showtomatoesandmetacritics)</visible>
+            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_UserMeter)) + Skin.HasSetting(furniture.showtomatoes)</visible>
             <centertop>50%</centertop>
             <width>auto</width>
             <height>64</height>

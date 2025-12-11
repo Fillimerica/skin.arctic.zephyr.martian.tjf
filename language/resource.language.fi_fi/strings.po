@@ -917,10 +917,6 @@ msgctxt "#31256"
 msgid "Homepage"
 msgstr "Kotisivu"
 
-msgctxt "#31257"
-msgid "Extended Song Info"
-msgstr "Lisätietoja kappaleesta"
-
 msgctxt "#31258"
 msgid "Fanart Thumbs"
 msgstr "Fanart-pienoiskuvat"
@@ -1297,10 +1293,6 @@ msgctxt "#31366"
 msgid "Show Filenames"
 msgstr "Näytä tiedostonimet"
 
-msgctxt "#31368"
-msgid "Show unwatched episodes count"
-msgstr "Näytä katsomattomien jaksojen määrä"
-
 msgctxt "#31369"
 msgid "Shifted ClearArt"
 msgstr "Siirto, clearart"
@@ -1548,10 +1540,6 @@ msgstr "Käytä vanhaa hyppypalkkia (vaatii lisäosan \"script.embuary.helper\")
 msgctxt "#31438"
 msgid "Genre Poster"
 msgstr "Lajityyppijuliste"
-
-msgctxt "#31441"
-msgid "RottenTomatoes & Metacritic"
-msgstr "RottenTomatoes ja Metacritic"
 
 msgctxt "#31442"
 msgid "Select media flags"

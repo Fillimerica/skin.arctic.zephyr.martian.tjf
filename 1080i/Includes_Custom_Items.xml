@@ -206,10 +206,10 @@
             <include condition="String.IsEqual(Skin.String(FadeNetflixPreview),50)">Item_Selected</include>
         </item>
         <item>
-            <label>$NUMBER[60]%</label>
+            <label>$NUMBER[60]% - $LOCALIZE[571]</label>
             <onclick>Skin.SetString(FadeNetflixPreview,60)</onclick>
             <onclick>Close</onclick>
-            <include condition="String.IsEqual(Skin.String(FadeNetflixPreview),60)">Item_Selected</include>
+            <include condition="String.IsEqual(Skin.String(FadeNetflixPreview),60) | String.IsEmpty(Skin.String(FadeNetflixPreview))">Item_Selected</include>
         </item>
         <item>
             <label>$NUMBER[70]%</label>
@@ -218,10 +218,10 @@
             <include condition="String.IsEqual(Skin.String(FadeNetflixPreview),70)">Item_Selected</include>
         </item>
         <item>
-            <label>$NUMBER[80]% - $LOCALIZE[571]</label>
+            <label>$NUMBER[80]%</label>
             <onclick>Skin.SetString(FadeNetflixPreview,80)</onclick>
             <onclick>Close</onclick>
-            <include condition="String.IsEqual(Skin.String(FadeNetflixPreview),80) | String.IsEmpty(Skin.String(FadeNetflixPreview))">Item_Selected</include>
+            <include condition="String.IsEqual(Skin.String(FadeNetflixPreview),80)">Item_Selected</include>
         </item>
         <item>
             <label>$NUMBER[90]%</label>
@@ -940,91 +940,150 @@
     </include>
     
     <include name="SettingsInfoItems">
-	    <item id="1">
+        <item id="1">
             <label>20077</label>
             <label2>31166</label2>
-	        <icon>special://skin/extras/icons/paintbrush.png</icon>
+            <icon>special://skin/extras/icons/paintbrush.png</icon>
             <onclick>ActivateWindow(SkinSettings)</onclick>
-	    </item>
-	    <item id="2">
-	        <label>14200</label>
-	        <label2>31277</label2>
-	        <icon>special://skin/extras/icons/equalizer.png</icon>
-	        <onclick>ActivateWindow(PlayerSettings)</onclick>
-	    </item>
+        </item>
+        <item id="2">
+            <label>14200</label>
+            <label2>31277</label2>
+            <icon>special://skin/extras/icons/equalizer.png</icon>
+            <onclick>ActivateWindow(PlayerSettings)</onclick>
+        </item>
         <item id="3">
             <label>15016</label>
             <label2>31987</label2>
             <icon>special://skin/extras/icons/xbox.png</icon>
             <onclick>ActivateWindow(gamesettings)</onclick>
         </item> 
-	    <item id="4">
+        <item id="4">
             <label>$LOCALIZE[7]</label>
             <icon>special://skin/extras/icons/filemanager.png</icon>
             <onclick>ActivateWindow(filemanager)</onclick>
-	    </item>
-	    <item id="5">
+        </item>
+        <item id="5">
             <label>14211</label>
             <label2>31276</label2>
             <icon>special://skin/extras/icons/tags.png</icon>
             <onclick>ActivateWindow(MediaSettings)</onclick>
-	    </item>
-	    <item id="6">
+        </item>
+        <item id="6">
             <label>14206</label>
             <label2>31275</label2>
             <icon>special://skin/extras/icons/skinsettings.png</icon>
             <onclick>ActivateWindow(InterfaceSettings)</onclick>
-	    </item>
-	    <item id="7">
-	        <label>24001</label>
-	        <label2>31162</label2>
-	        <icon>special://skin/extras/icons/addons.png</icon>
-	        <onclick>ActivateWindow(AddonBrowser)</onclick>
-	    </item>
+        </item>
+        <item id="7">
+            <label>24001</label>
+            <label2>31162</label2>
+            <icon>special://skin/extras/icons/addons.png</icon>
+            <onclick>ActivateWindow(AddonBrowser)</onclick>
+        </item>
         <item id="8">
-            <label>19191</label>
+            <label>14204</label>
             <label2>31163</label2>
             <icon>special://skin/extras/icons/livetv.png</icon>
             <onclick>ActivateWindow(pvrsettings)</onclick>
         </item>
-	    <item id="9">
+        <item id="9">
             <label>13200</label>
             <label2>31165</label2>
             <icon>special://skin/extras/icons/actor.png</icon>
             <onclick>ActivateWindow(Profiles)</onclick>
         </item>
         <item id="10">
-	        <label>130</label>
-	        <label2>31167</label2>
-	        <icon>special://skin/extras/icons/sysinfo.png</icon>
-	        <onclick>ActivateWindow(7)</onclick>
+            <label>130</label>
+            <label2>31167</label2>
+            <icon>special://skin/extras/icons/sysinfo.png</icon>
+            <onclick>ActivateWindow(7)</onclick>
             <visible>!System.HasAddon(service.libreelec.settings) + !System.HasAddon(service.coreelec.settings)</visible>
-	    </item>
-	    <item id="11">
-	        <label>LibreELEC $LOCALIZE[5]</label>
-	        <label2>31373</label2>
-	        <icon>special://skin/extras/icons/libreelec.png</icon>
-	        <onclick>RunScript(service.libreelec.settings)</onclick>
-	        <visible>System.HasAddon(service.libreelec.settings)</visible>
-	    </item>
+        </item>
+        <item id="11">
+            <label>LibreELEC $LOCALIZE[5]</label>
+            <label2>31373</label2>
+            <icon>special://skin/extras/icons/libreelec.png</icon>
+            <onclick>RunScript(service.libreelec.settings)</onclick>
+            <visible>System.HasAddon(service.libreelec.settings)</visible>
+        </item>
         <item id="12">
-	        <label>CoreELEC $LOCALIZE[5]</label>
-	        <label2>31374</label2>
-	        <icon>special://skin/extras/icons/coreelec.png</icon>
-	        <onclick>RunScript(service.coreelec.settings)</onclick>
-	        <visible>System.HasAddon(service.coreelec.settings)</visible>
-	    </item>
+            <label>CoreELEC $LOCALIZE[5]</label>
+            <label2>31374</label2>
+            <icon>special://skin/extras/icons/coreelec.png</icon>
+            <onclick>RunScript(service.coreelec.settings)</onclick>
+            <visible>System.HasAddon(service.coreelec.settings)</visible>
+        </item>
         <item id="13">
             <label>14036</label>
             <label2>31164</label2>
             <icon>special://skin/extras/icons/network.png</icon>
             <onclick>ActivateWindow(servicesettings)</onclick>
         </item>
-	    <item id="14">
+        <item id="14">
             <label>13000</label>
             <label2>31161</label2>
             <icon>special://skin/extras/icons/configure.png</icon>
             <onclick>ActivateWindow(SystemSettings)</onclick>
-	    </item>
+        </item>
     </include>
+
+    <include name="CustomSettings_Items.Ratings">
+    	<item id="1">
+            <property name="SettingsName">$LOCALIZE[31712]</property>
+    		<label>231</label>
+    		<onclick>Skin.Reset(Ratings.$PARAM[content].$PARAM[slot])</onclick>
+    		<onclick>Close</onclick>
+    	</item>
+        <item id="2">
+            <include content="RatingItem">
+                <param name="label" value="$LOCALIZE[31717]"/>
+                <param name="flag" value="TMDb"/>
+                <param name="content" value="$PARAM[content]"/>
+                <param name="slot" value="$PARAM[slot]"/>
+            </include>
+        </item> 
+        <item id="3">
+            <include content="RatingItem">
+                <param name="label" value="$LOCALIZE[368]"/>
+                <param name="flag" value="IMDb"/>
+                <param name="content" value="$PARAM[content]"/>
+                <param name="slot" value="$PARAM[slot]"/>
+            </include>
+        </item> 
+        <item id="4">
+            <include content="RatingItem">
+                <param name="label" value="$LOCALIZE[31486]"/>
+                <param name="flag" value="Trakt"/>
+                <param name="content" value="$PARAM[content]"/>
+                <param name="slot" value="$PARAM[slot]"/>
+            </include>
+        </item> 
+    	<item id="5">
+    		<include content="RatingItem">
+    			<param name="label" value="$LOCALIZE[31719]"/>
+    			<param name="flag" value="MC"/>
+    			<param name="content" value="$PARAM[content]"/>
+    			<param name="slot" value="$PARAM[slot]"/>
+    		</include>
+    	</item>	
+    	<item id="6">
+    		<include content="RatingItem">
+    			<param name="label" value="$LOCALIZE[31720]"/>
+    			<param name="flag" value="RT"/>
+    			<param name="content" value="$PARAM[content]"/>
+    			<param name="slot" value="$PARAM[slot]"/>
+    		</include>
+    	</item>	
+    </include>
+    
+    <include name="RatingItem">
+    	<label>$PARAM[label]</label>
+    	<onclick>Skin.SetString(Ratings.$PARAM[content].$PARAM[slot],$PARAM[flag])</onclick>
+    	<onclick condition="!Integer.IsEqual($PARAM[slot],1) + String.IsEqual(Skin.String(Ratings.$PARAM[content].1),$PARAM[flag])">Skin.Reset(Ratings.$PARAM[content].1)</onclick>
+    	<onclick condition="!Integer.IsEqual($PARAM[slot],2) + String.IsEqual(Skin.String(Ratings.$PARAM[content].2),$PARAM[flag])">Skin.Reset(Ratings.$PARAM[content].2)</onclick>
+		<onclick>Close</onclick>
+        <include condition="String.IsEqual(Skin.String(Ratings.$PARAM[content].$PARAM[slot]),$PARAM[flag])">Item_Selected</include>
+    </include>
+
 </includes>
