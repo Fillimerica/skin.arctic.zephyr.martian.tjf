@@ -51,49 +51,56 @@
                 <scrolltime>0</scrolltime>
                 <usecontrolcoords>true</usecontrolcoords>
                 <include content="Def9000GroupList"><param name="height" value="560" /></include>
-                <control type="button" id="9001">
+<!-- TF 09/2005 Removed direct links to other parts of LiveTV from the context menu. These items are reachable from the home menu. -->
+ <!--                <control type="button" id="9001">
                     <description>Channels</description>
                     <label>19019</label>
-                    <onclick>ActivateWindow(TVChannels)</onclick>
+                    <onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVChannels)</onclick>
+                    <onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioChannels)</onclick>
                     <include>DefContextButtonGradient</include>
                     <align>left</align>
                 </control>
                 <control type="button" id="9002">
                     <description>Guide</description>
                     <label>22020</label>
-                    <onclick>ActivateWindow(TvGuide)</onclick>
+                    <onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TvGuide)</onclick>
+                    <onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioGuide)</onclick>
                     <include>DefContextButtonGradient</include>
                     <align>left</align>
                 </control>
                 <control type="button" id="9003">
                     <description>Recordings</description>
                     <label>19017</label>
-                    <onclick>ActivateWindow(TVRecordings)</onclick>
+                    <onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVRecordings)</onclick>
+                    <onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioRecordings)</onclick>
                     <include>DefContextButtonGradient</include>
                     <align>left</align>
                 </control>
                 <control type="button" id="9004">
                     <description>Timers</description>
                     <label>19040</label>
-                    <onclick>ActivateWindow(TVTimers)</onclick>
+                    <onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimers)</onclick>
+                    <onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioTimers)</onclick>
                     <include>DefContextButtonGradient</include>
                     <align>left</align>
                 </control>
                 <control type="button" id="9005">
                     <description>Search</description>
                     <label>19138</label>
-                    <onclick>ActivateWindow(TvTimerRules)</onclick>
+                    <onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TvTimerRules)</onclick>
+                    <onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioTimerRules)</onclick>
                     <include>DefContextButtonGradient</include>
                     <align>left</align>
                 </control>
                 <control type="button" id="9006">
                     <description>Search</description>
                     <label>137</label>
-                    <onclick>ActivateWindow(TVSearch)</onclick>
+                    <onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVSearch)</onclick>
+                    <onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioSearch)</onclick>
                     <include>DefContextButtonGradient</include>
                     <align>left</align>
                 </control>
-                <control type="button" id="28">
+ -->                <control type="button" id="28">
                     <description>Group</description>
                     <include>DefContextButtonGradient</include>
                     <align>left</align>
@@ -104,8 +111,10 @@
                     <align>left</align>
                 </control>
                 <control type="radiobutton" id="9007">
-                    <description>Search</description>
-                    <label>31384</label>
+<!-- TF 09/2025 Change label for hiding show summary on EPG to more descriptive text. -->
+                    <description>Show Summary Control</description>
+					<label>Hide Show Summary</label>
+                    <!-- <label>31384</label> -->
                     <selected>Skin.HasSetting(pvr.fullepg)</selected>
                     <onclick>Skin.ToggleSetting(pvr.fullepg)</onclick>
                     <onclick>ReloadSkin()</onclick>
@@ -113,7 +122,19 @@
                     <visible>Window.IsVisible(MyPVRGuide.xml)</visible>
                     <align>left</align>
                 </control>
-                <control type="button" id="3">
+<!-- TF 09/2025 Add option to select the larger or the original guide grid size. -->
+                 <control type="radiobutton" id="9008">
+                    <description>Grid View Size Control</description>
+					<label>Large Grid View</label>
+                    <selected>Skin.HasSetting(pvr.bigepg)</selected>
+                    <onclick>Skin.ToggleSetting(pvr.bigepg)</onclick>
+                    <onclick>ReloadSkin()</onclick>
+                    <include>DefContextButtonGradient</include>
+                    <visible>Window.IsVisible(MyPVRGuide.xml)</visible>
+                    <align>left</align>
+                </control>
+
+               <control type="button" id="3">
                     <description>Sort</description>
                     <include>DefContextButtonGradient</include>
                     <align>left</align>
@@ -233,6 +254,17 @@
                     <textcolor>Dark1</textcolor>
                     <selectedcolor>Dark1</selectedcolor>
                     <label>$INFO[ListItem.Genre]</label>
+                    <visible>String.IsEmpty(ListItem.Episode)</visible>
+                </control>
+                <control type="label">
+                    <top>48</top>
+                    <height>64</height>
+                    <aligny>center</aligny>
+                    <font>Tiny</font>
+                    <textcolor>Dark1</textcolor>
+                    <selectedcolor>Dark1</selectedcolor>
+                    <label>$INFO[ListItem.Season,$LOCALIZE[20373] ,  •  ]$INFO[ListItem.Episode,$LOCALIZE[20359] ,]</label>
+                    <visible>!String.IsEmpty(ListItem.Episode)</visible>
                 </control>
                 <control type="textbox">
                     <top>126</top>
@@ -241,7 +273,7 @@
                     <font>TinyPlot</font>
                     <textcolor>Dark2</textcolor>
                     <selectedcolor>Dark2</selectedcolor>
-                    <label>[B]$INFO[ListItem.EpisodeName,,[CR]][/B]$INFO[ListItem.Plot]</label>
+                    <label>$VAR[PVREpisodeLabel,[B],[/B][CR]]$INFO[ListItem.Plot]</label>
                 </control>
             </control>
         </control>
@@ -398,7 +430,7 @@
                             <height>100</height>
                             <aspectratio>keep</aspectratio>
                             <texture colordiffuse="$VAR[ColorHighlight]">progress/play.png</texture>
-                            <visible>ListItem.IsPlaying</visible>
+                            <visible>ListItem.IsPlaying + Window.IsVisible(MyPVRChannels.xml)</visible>
                         </control>
                         <control type="image">
                             <left>10</left>
@@ -494,6 +526,19 @@
                                 <label>$INFO[ListItem.Label]</label>
                             </control>
                             <control type="label">
+                                <right>30</right>
+                                <top>12</top>
+                                <width>32</width>
+                                <height>64</height>
+                                <font>WatchedIcon</font>
+                                <textcolor>Dark2</textcolor>
+                                <selectedcolor>Dark2</selectedcolor>
+                                <aligny>center</aligny>
+                                <align>right</align>
+                                <label>$VAR[LabelPercentWatched]</label>
+                                <visible>!String.IsEqual(ListItem.Label,..)</visible>
+                            </control>
+                            <control type="label">
                                 <animation effect="slide" end="30" time="0" condition="ListItem.IsRecording">Conditional</animation>
                                 <left>140</left>
                                 <bottom>8</bottom>
@@ -515,15 +560,6 @@
                                 <textcolor>Dark2</textcolor>
                                 <selectedcolor>Dark2</selectedcolor>
                                 <label>$INFO[ListItem.ChannelName]</label>
-                            </control>
-                            <control type="image">
-                                <centerright>30</centerright>
-                                <centertop>66</centertop>
-                                <width>32</width>
-                                <height>32</height>
-                                <aspectratio aligny="top">keep</aspectratio>
-                                <texture>$VAR[PercentWatched]</texture>
-                                <visible>!String.IsEqual(ListItem.Label,..)</visible>
                             </control>
                         </control>
                     </itemlayout>
@@ -559,7 +595,7 @@
                                 <height>100</height>
                                 <aspectratio>keep</aspectratio>
                                 <texture colordiffuse="$VAR[ColorHighlight]">progress/play.png</texture>
-                                <visible>ListItem.IsPlaying</visible>
+                                <visible>ListItem.IsPlaying + Window.IsVisible(MyPVRChannels.xml)</visible>
                             </control>
                             <control type="image">
                                 <left>10</left>
@@ -591,6 +627,8 @@
                                     <label>$INFO[ListItem.ChannelNumberLabel,,  ]$INFO[ListItem.ChannelName]</label>
                                 </control>
                                 <control type="label">
+                                    <animation effect="slide" end="30" time="0" condition="ListItem.IsRecording">Conditional</animation>
+                                    <animation effect="slide" end="30" time="0" condition="ListItem.IsPlaying">Conditional</animation>
                                     <left>150</left>
                                     <bottom>20</bottom>
                                     <right>100</right>
@@ -600,8 +638,6 @@
                                     <textcolor>Light2</textcolor>
                                     <selectedcolor>Light2</selectedcolor>
                                     <label fallback="19055">$INFO[ListItem.Title]</label>
-                                    <animation effect="slide" end="30" time="0" condition="ListItem.IsRecording">Conditional</animation>
-                                    <animation effect="slide" end="30" time="0" condition="ListItem.IsPlaying">Conditional</animation>
                                 </control>
                                 <control type="label">
                                     <right>30</right>
@@ -655,7 +691,20 @@
                                     <label>$INFO[ListItem.Label]</label>
                                 </control>
                                 <control type="label">
-                                    <animation effect="slide" end="30" time="0" condition="ListItem.IsRecording">Conditional</animation>
+                                    <right>30</right>
+                                    <top>12</top>
+                                    <width>32</width>
+                                    <height>64</height>
+                                    <font>WatchedIcon</font>
+                                    <textcolor>Light2</textcolor>
+                                    <selectedcolor>Light2</selectedcolor>
+                                    <aligny>center</aligny>
+                                    <align>right</align>
+                                    <label>$VAR[LabelPercentWatched]</label>
+                                    <visible>!String.IsEqual(ListItem.Label,..)</visible>
+                                </control>
+                                <control type="label">
+	                                <animation effect="slide" end="30" time="0" condition="ListItem.IsRecording">Conditional</animation>
                                     <left>140</left>
                                     <bottom>8</bottom>
                                     <right>100</right>
@@ -676,15 +725,6 @@
                                     <textcolor>Light2</textcolor>
                                     <selectedcolor>Light2</selectedcolor>
                                     <label>$INFO[ListItem.ChannelName]</label>
-                                </control>
-                                <control type="image">
-                                    <centerright>30</centerright>
-                                    <centertop>66</centertop>
-                                    <width>32</width>
-                                    <height>32</height>
-                                    <aspectratio aligny="top">keep</aspectratio>
-                                    <texture>$VAR[PercentWatched]</texture>
-                                    <visible>!String.IsEqual(ListItem.Label,..)</visible>
                                 </control>
                             </control>
                         </control>
@@ -747,7 +787,7 @@
                             <height>100</height>
                             <aspectratio>keep</aspectratio>
                             <texture colordiffuse="$VAR[ColorHighlight]">progress/play.png</texture>
-                            <visible>ListItem.IsPlaying</visible>
+                            <visible>ListItem.IsPlaying + Window.IsVisible(MyPVRChannels.xml)</visible>
                         </control>
                         <control type="image">
                             <left>10</left>
@@ -843,6 +883,19 @@
                                 <label>$INFO[ListItem.Label]</label>
                             </control>
                             <control type="label">
+                                <right>30</right>
+                                <top>12</top>
+                                <width>32</width>
+                                <height>64</height>
+                                <font>WatchedIcon</font>
+                                <textcolor>Dark2</textcolor>
+                                <selectedcolor>Dark2</selectedcolor>
+                                <aligny>center</aligny>
+                                <align>right</align>
+                                <label>$VAR[LabelPercentWatched]</label>
+                                <visible>!String.IsEqual(ListItem.Label,..)</visible>
+                            </control>
+                            <control type="label">
                                 <animation effect="slide" end="30" time="0" condition="ListItem.IsRecording">Conditional</animation>
                                 <left>140</left>
                                 <bottom>8</bottom>
@@ -864,15 +917,6 @@
                                 <textcolor>Dark2</textcolor>
                                 <selectedcolor>Dark2</selectedcolor>
                                 <label>$INFO[ListItem.ChannelName]</label>
-                            </control>
-                            <control type="image">
-                                <centerright>30</centerright>
-                                <centertop>66</centertop>
-                                <width>32</width>
-                                <height>32</height>
-                                <aspectratio aligny="top">keep</aspectratio>
-                                <texture>$VAR[PercentWatched]</texture>
-                                <visible>!String.IsEqual(ListItem.Label,..)</visible>
                             </control>
                         </control>
                     </itemlayout>
@@ -908,7 +952,7 @@
                                 <height>100</height>
                                 <aspectratio>keep</aspectratio>
                                 <texture colordiffuse="$VAR[ColorHighlight]">progress/play.png</texture>
-                                <visible>ListItem.IsPlaying</visible>
+                                <visible>ListItem.IsPlaying + Window.IsVisible(MyPVRChannels.xml)</visible>
                             </control>
                             <control type="image">
                                 <left>10</left>
@@ -940,6 +984,8 @@
                                     <label>$INFO[ListItem.ChannelNumberLabel,,  ]$INFO[ListItem.ChannelName]</label>
                                 </control>
                                 <control type="label">
+                                    <animation effect="slide" end="30" time="0" condition="ListItem.IsRecording">Conditional</animation>
+                                    <animation effect="slide" end="30" time="0" condition="ListItem.IsPlaying">Conditional</animation>
                                     <left>150</left>
                                     <bottom>20</bottom>
                                     <right>100</right>
@@ -949,8 +995,6 @@
                                     <textcolor>Light2</textcolor>
                                     <selectedcolor>Light2</selectedcolor>
                                     <label fallback="19055">$INFO[ListItem.Title]</label>
-                                    <animation effect="slide" end="30" time="0" condition="ListItem.IsRecording">Conditional</animation>
-                                    <animation effect="slide" end="30" time="0" condition="ListItem.IsPlaying">Conditional</animation>
                                 </control>
                                 <control type="label">
                                     <right>30</right>
@@ -1004,6 +1048,19 @@
                                     <label>$INFO[ListItem.Label]</label>
                                 </control>
                                 <control type="label">
+                                    <right>30</right>
+                                    <top>12</top>
+                                    <width>32</width>
+                                    <height>64</height>
+                                    <font>WatchedIcon</font>
+                                    <textcolor>Light2</textcolor>
+                                    <selectedcolor>Light2</selectedcolor>
+                                    <aligny>center</aligny>
+                                    <align>right</align>
+                                    <label>$VAR[LabelPercentWatched]</label>
+                                    <visible>!String.IsEqual(ListItem.Label,..)</visible>
+                                </control>
+                                <control type="label">
                                     <animation effect="slide" end="30" time="0" condition="ListItem.IsRecording">Conditional</animation>
                                     <left>140</left>
                                     <bottom>8</bottom>
@@ -1025,15 +1082,6 @@
                                     <textcolor>Light2</textcolor>
                                     <selectedcolor>Light2</selectedcolor>
                                     <label>$INFO[ListItem.ChannelName]</label>
-                                </control>
-                                <control type="image">
-                                    <centerright>30</centerright>
-                                    <centertop>66</centertop>
-                                    <width>32</width>
-                                    <height>32</height>
-                                    <aspectratio aligny="top">keep</aspectratio>
-                                    <texture>$VAR[PercentWatched]</texture>
-                                    <visible>!String.IsEqual(ListItem.Label,..)</visible>
                                 </control>
                             </control>
                         </control>
@@ -2183,28 +2231,15 @@
 	            <control type="group">
 	                <orientation>horizontal</orientation>
 	                <left>0</left>
-	                <right>250</right>
-	                <top>1</top>
+	                <right>240</right>
+	                <top>5</top>
 	                <control type="label">
-	                    <width max="710">auto</width>
 	                    <aligny>center</aligny>
 	                    <height>64</height>
-	                    <font>Name1</font>
+	                    <font>SmallBold</font>
 	                    <textcolor>PanelWhite100</textcolor>
 	                    <selectedcolor>PanelWhite100</selectedcolor>
-	                    <label>$INFO[ListItem.Title]</label>
-	                </control>
-	                <control type="label">
-	                    <visible>!String.IsEmpty(ListItem.Genre)</visible>
-	                    <width max="710">auto</width>
-	                    <aligny>center</aligny>
-	                    <align>right</align>
-	                    <right>0</right>
-	                    <height>64</height>
-	                    <font>Name1</font>
-	                    <textcolor>PanelWhite100</textcolor>
-	                    <selectedcolor>PanelWhite100</selectedcolor>
-	                    <label>$INFO[ListItem.Genre,, • ]$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ,]</label>
+                        <label>[COLOR=$VAR[ColorHighlight]]$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ,][/COLOR]$INFO[ListItem.Title,  ,]$VAR[PVRGenreLabel]</label>
 	                </control>
 	            </control>
 <!-- TF 09/2025 Added missing episode number and name to the grid display. -->
@@ -2243,7 +2278,7 @@
 	                <font>Tiny24</font>
 	                <textcolor>PanelWhite70</textcolor>
 	                <selectedcolor>PanelWhite70</selectedcolor>
-	                <label>$INFO[ListItem.Plot]</label>
+	                <label>$VAR[PVREpisodeLabel,,[CR]]$INFO[ListItem.Plot]</label>
 	            </control>
 	            <control type="image">
 	                <right>20</right>

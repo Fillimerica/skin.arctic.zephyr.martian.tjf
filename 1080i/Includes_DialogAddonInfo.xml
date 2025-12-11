@@ -108,7 +108,7 @@
                             <param name="arrowleft" value="-12"/>
                             <param name="arrowtop" value="342"/>
                             <param name="arrowright" value="87"/>
-                            <param name="visi" value="true"/>
+                            <param name="visi" value="String.IsEqual(Window.Property(content),1)"/>
                             <param name="animation" value="Animation.addoninfo"/>
                             <param name="fallbackpicture" value="DefaultAddonImages.png"/>
                             <param name="controlid" value="50"/>
@@ -145,4 +145,77 @@
             </control>
         </control>
     </include>
+
+    <include name="DialogAddonInfoNavigation">
+        <control type="grouplist" id="9000">
+            <bottom>224</bottom>
+            <left>783</left>
+            <right>SidePad</right>
+            <include>listdimensions</include>
+            <ondown>9601</ondown>
+            <onup condition="Control.IsVisible(50)">SetProperty(content,1)</onup>
+            <onup condition="Control.IsVisible(50)">50</onup>
+            <orientation>horizontal</orientation>
+            <control type="radiobutton" id="12">
+                <include content="DefInfoButtons">
+                    <param name="icon" value="buttonsdialogs/launch.png" />
+                </include>
+                <visible>Control.IsEnabled(12)</visible>
+            </control>
+            <control type="radiobutton" id="6">
+                <textureradioonfocus colordiffuse="FFFFFFFF">buttonsdialogs/uninstall.png</textureradioonfocus>
+                <textureradioonnofocus colordiffuse="FFFFFFFF">buttonsdialogs/uninstall.png</textureradioonnofocus>
+                <include content="DefInfoButtons">
+                    <param name="icon" value="buttonsdialogs/install.png" />
+                </include>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
+                <visible>Control.IsEnabled(6)</visible>
+                <selected>ListItem.Property(addon.isinstalled) | !Window.IsActive(addonbrowser)</selected>
+            </control>
+            <control type="radiobutton" id="7">
+                <textureradioonfocus colordiffuse="FFFFFFFF">buttonsdialogs/disable.png</textureradioonfocus>
+                <textureradioonnofocus colordiffuse="FFFFFFFF">buttonsdialogs/disable.png</textureradioonnofocus>
+                <include content="DefInfoButtons">
+                    <param name="icon" value="buttonsdialogs/enabled.png" />
+                </include>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
+                <visible>Control.IsEnabled(7)</visible>
+                <selected>!String.StartsWith(Control.GetLabel(7),$LOCALIZE[24022]) | !Window.IsActive(addonbrowser)</selected>
+            </control>
+            <control type="radiobutton" id="9">
+                <include content="DefInfoButtons">
+                    <param name="icon" value="buttonsdialogs/configure.png" />
+                </include>
+                <visible allowhiddenfocus="true">Control.IsEnabled(9)</visible>
+            </control>
+            <control type="radiobutton" id="8">
+                <include content="DefInfoButtons">
+                    <param name="icon" value="buttonsdialogs/install.png" />
+                </include>
+                <visible>Control.IsEnabled(8)</visible>
+            </control>
+            <control type="radiobutton" id="14">
+                <include content="DefInfoButtons">
+                    <param name="icon" value="buttonsdialogs/update.png" />
+                </include>
+                <visible>Control.IsEnabled(14)</visible>
+            </control>
+            <control type="radiobutton" id="13">
+                <textureradioonfocus colordiffuse="FFFFFFFF">buttonsdialogs/autoupdateon.png</textureradioonfocus>
+                <textureradioonnofocus colordiffuse="FFFFFFFF">buttonsdialogs/autoupdateon.png</textureradioonnofocus>
+                <include content="DefInfoButtons">
+                    <param name="icon" value="buttonsdialogs/autoupdate.png" />
+                </include>
+                <visible>!Skin.HasSetting(global.kioskmode)</visible>
+                <visible>Control.IsEnabled(13)</visible>
+            </control>
+            <control type="radiobutton" id="10">
+                <include content="DefInfoButtons">
+                    <param name="icon" value="buttonsdialogs/dependency.png" />
+                </include>
+                <visible>Control.IsEnabled(10)</visible>
+            </control>
+        </control>
+    </include>
+
 </includes>

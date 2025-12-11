@@ -6,7 +6,7 @@
 		<param name="top_pad">PosterPad</param>
 		<param name="left_pad">SidePad</param>
 		<param name="right_pad">SidePad</param>
-		<param name="epg_height">640</param>
+		<param name="epg_height">680</param>
 		<definition>
 		   <control type="group" id="50">
 				<control type="group">

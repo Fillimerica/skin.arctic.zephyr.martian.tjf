@@ -5,6 +5,7 @@ Enhanced the EPG to display more information as a whole by moving the headers ou
 increasing the size of the grid area, and by adding in the missing episode name and season information.
 
 To revert to the original guide, swap the includes for ones with no parameters.
+SkinSetting pvr.bigepg (bool) now controls which version of the guide is displayed.
  -->
 
 <window>
@@ -15,30 +16,37 @@ To revert to the original guide, swap the includes for ones with no parameters.
     <include>Blur_OnLoad_Action</include>
     <controls>
         <include>GlobalBackground</include>
-		<!-- <include>Furniture_Header</include> -->
+
+		<!-- Original EPG Size -->
+		<include condition="!Skin.HasSetting(pvr.bigepg)">Furniture_Header</include>
+		<include condition="!Skin.HasSetting(pvr.bigepg)">Furniture_NowPlaying</include>
+		<include condition="!Skin.HasSetting(pvr.bigepg)">Furniture_Clock</include>
+		<include condition="!Skin.HasSetting(pvr.bigepg)">Furniture_Weather</include>
+
+<!-- TF 09/2025 Body of code moved to Includes_Guide.xml so that options can be passed. -->
+		<include condition="!Skin.HasSetting(pvr.bigepg)">DynamicEPGGuide</include>
+
+		<!-- Larger EPG View -->
 <!-- TF 09/2025 Modify header to allow more room on screen. -->
-        <include content="Furniture_Header">
+		<include condition="Skin.HasSetting(pvr.bigepg)" content="Furniture_Header">
 			<param name="top_pad" value="20" />
 			<param name="left_pad" value="20" />
 		</include>
 
-        <include>Furniture_NowPlaying</include>
+		<include condition="Skin.HasSetting(pvr.bigepg)">Furniture_NowPlaying</include>
 
-		<!-- <include>Furniture_Clock</include> -->
-        <include content="Furniture_Clock">
+		<include condition="Skin.HasSetting(pvr.bigepg)" content="Furniture_Clock">
 			<param name="bottom_pad" value="90" />
 			<param name="right_pad" value="20" />
 		</include>
 
-        <!-- <include>Furniture_Weather</include> -->
-        <include content="Furniture_Weather">
+		<include condition="Skin.HasSetting(pvr.bigepg)" content="Furniture_Weather">
 			<param name="top_pad" value="20" />
 			<param name="right_pad" value="20" />
 		</include>
 
 <!-- TF 09/2025 Body of code moved to Includes_Guide.xml so that options can be passed. -->
-        <!-- <include>DynamicEPGGuide</include> -->
-        <include content="DynamicEPGGuide">
+		<include condition="Skin.HasSetting(pvr.bigepg)" content="DynamicEPGGuide">
 			<param name="top_pad" value="120" />
 			<param name="left_pad" value="20" />
 			<param name="right_pad" value="20" />

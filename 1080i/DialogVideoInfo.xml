@@ -2,9 +2,7 @@
 <!-- Foundation -->
 <window id="2003">
     <defaultcontrol always="true">9000</defaultcontrol>
-    <onload condition="Control.IsVisible(11006)">SetFocus(11006)</onload>
     <onload condition="Control.IsVisible(11005)">SetFocus(11005)</onload>
-    <onload condition="Control.IsVisible(11004)">SetFocus(11004)</onload>
     <onload condition="Control.IsVisible(11003)">SetFocus(11003)</onload>
     <onload condition="Control.IsVisible(11002)">SetFocus(11002)</onload>
     <onload condition="Control.IsVisible(11001)">SetFocus(11001)</onload>
@@ -48,24 +46,17 @@
     <onload>ClearProperty(videoseasons)</onload>
     <onload>ClearProperty(actormovies)</onload>
     <onload>ClearProperty(actortvshows)</onload>
-    <onload>ClearProperty(moviecontent)</onload>
-    <onload>ClearProperty(actinfo)</onload>
     <onload>ClearProperty(ShowDisc)</onload>
+    <onunload>ClearProperty(content)</onunload>
     <onunload>ClearProperty(SetUserRating,home)</onunload>
     <onunload>ClearProperty(dontslide,home)</onunload>
     <onunload>ClearProperty(ShowDisc)</onunload>
     <onunload condition="!String.IsEmpty(Window(home).Property(shownowplayinginfo))">SetFocus(4000)</onunload>
     <onunload condition="!String.IsEmpty(Window(home).Property(shownowplayinginfo))">ClearProperty(shownowplayinginfo,home)</onunload>
-    <onload>ClearProperty(content)</onload>
-    <onload>ClearProperty(down)</onload>
     <onload condition="Skin.HasSetting(home.netflix.autoplay.trailer) + Skin.HasSetting(trailer.stop.on.dialogvideoinfo) + $EXP[TrailerIsPlaying] + Player.Playing">Stop</onload>
     <onload condition="Skin.HasSetting(home.netflix.autoplay.trailer) + Skin.HasSetting(trailer.pause.on.dialogvideoinfo) + $EXP[TrailerIsPlaying] + Player.Playing">Pause</onload>
     <onunload condition="Skin.HasSetting(home.netflix.autoplay.trailer) + Skin.HasSetting(trailer.pause.on.dialogvideoinfo) + $EXP[TrailerIsPlaying] + Player.Paused">Pause</onunload>
-	<onload condition="!$EXP[IsPersonInfo]">SetProperty(infodialog,video,home)</onload>
-	<onload condition="$EXP[IsPersonInfo]">SetProperty(infodialog,person,home)</onload>
-	<onunload>ClearProperty(infodialog,home)</onunload>
     <controls>
-        <include condition="!$EXP[IsPersonInfo]">DialogVideoInfoWIP</include>
-        <include condition="$EXP[IsPersonInfo]">DialogPersonInfo</include>
+        <include>DialogVideoInfoWIP</include>
     </controls>
 </window>
