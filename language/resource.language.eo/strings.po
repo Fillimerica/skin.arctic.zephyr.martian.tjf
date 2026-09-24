@@ -306,10 +306,6 @@ msgctxt "#31089"
 msgid "m"
 msgstr "m"
 
-msgctxt "#31090"
-msgid "New time format"
-msgstr ""
-
 msgctxt "#31091"
 msgid "Double-Flix Banner"
 msgstr ""
@@ -907,7 +903,7 @@ msgid "Collections of"
 msgstr "Aroj de"
 
 msgctxt "#31254"
-msgid "Display plot overlay after delay"
+msgid "Show plot overlay after delay"
 msgstr ""
 
 msgctxt "#31255"
@@ -1342,14 +1338,6 @@ msgctxt "#31384"
 msgid "Fullsize EPG"
 msgstr ""
 
-msgctxt "#31385"
-msgid "Also use for widgets"
-msgstr ""
-
-msgctxt "#31386"
-msgid "Also use for system-icons"
-msgstr ""
-
 msgctxt "#31387"
 msgid "DiscArt Fallback-Type"
 msgstr ""
@@ -1462,14 +1450,6 @@ msgctxt "#31418"
 msgid "Widget 5"
 msgstr ""
 
-msgctxt "#31419"
-msgid "Big Poster"
-msgstr "Granda afiŝo"
-
-msgctxt "#31420"
-msgid "Lock view for"
-msgstr ""
-
 msgctxt "#31421"
 msgid "Images"
 msgstr "Bildoj"
@@ -1478,29 +1458,9 @@ msgctxt "#31422"
 msgid "Big wide"
 msgstr ""
 
-msgctxt "#31423"
-msgid "Big list"
-msgstr "Granda listo"
-
-msgctxt "#31424"
-msgid "Enable forced views (experimental)"
-msgstr ""
-
 msgctxt "#31425"
 msgid "Seconds"
 msgstr "Sekundoj"
-
-msgctxt "#31426"
-msgid "Reset forced views"
-msgstr ""
-
-msgctxt "#31427"
-msgid "Forced views"
-msgstr ""
-
-msgctxt "#31428"
-msgid "Big icons"
-msgstr ""
 
 msgctxt "#31429"
 msgid "more..."
@@ -1644,14 +1604,6 @@ msgstr ""
 
 msgctxt "#31469"
 msgid "Recommended addons"
-msgstr ""
-
-msgctxt "#31470"
-msgid "Fixes"
-msgstr ""
-
-msgctxt "#31471"
-msgid "Hidden video window to prevent audio errors"
 msgstr ""
 
 msgctxt "#31472"
@@ -1818,26 +1770,6 @@ msgctxt "#31524"
 msgid "IMDb Position"
 msgstr ""
 
-msgctxt "#31526"
-msgid "Use default selectbox"
-msgstr ""
-
-msgctxt "#31527"
-msgid "Small Fanart"
-msgstr ""
-
-msgctxt "#31528"
-msgid "Small Thumbnail"
-msgstr ""
-
-msgctxt "#31529"
-msgid "Small Poster Thumbnail"
-msgstr ""
-
-msgctxt "#31530"
-msgid "Seasons Info v2"
-msgstr ""
-
 msgctxt "#31533"
 msgid "Clean and minimal"
 msgstr ""
@@ -1882,10 +1814,6 @@ msgctxt "#31564"
 msgid "Low list"
 msgstr ""
 
-msgctxt "#31565"
-msgid "Filenames"
-msgstr ""
-
 msgctxt "#31567"
 msgid "Fallback image"
 msgstr ""
@@ -1896,10 +1824,6 @@ msgstr ""
 
 msgctxt "#31569"
 msgid "Clearlogo instead of title"
-msgstr ""
-
-msgctxt "#31575"
-msgid "Default selectbox"
 msgstr ""
 
 msgctxt "#31576"
@@ -1916,14 +1840,6 @@ msgstr ""
 
 msgctxt "#31589"
 msgid "Enable auto scrolling for titles"
-msgstr ""
-
-msgctxt "#31591"
-msgid "V2"
-msgstr ""
-
-msgctxt "#31592"
-msgid "List type"
 msgstr ""
 
 msgctxt "#31593"

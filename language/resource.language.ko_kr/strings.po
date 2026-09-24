@@ -304,10 +304,6 @@ msgctxt "#31089"
 msgid "m"
 msgstr "분"
 
-msgctxt "#31090"
-msgid "New time format"
-msgstr "새로운 시간 형식"
-
 msgctxt "#31091"
 msgid "Double-Flix Banner"
 msgstr "이단 배너 플릭스"
@@ -905,7 +901,7 @@ msgid "Collections of"
 msgstr "컬렉션"
 
 msgctxt "#31254"
-msgid "Display plot overlay after delay"
+msgid "Show plot overlay after delay"
 msgstr ""
 
 msgctxt "#31255"
@@ -1340,14 +1336,6 @@ msgctxt "#31384"
 msgid "Fullsize EPG"
 msgstr "전체화면 편성표"
 
-msgctxt "#31385"
-msgid "Also use for widgets"
-msgstr "위젯에도 사용"
-
-msgctxt "#31386"
-msgid "Also use for system-icons"
-msgstr "시스템 아이콘에도 사용"
-
 msgctxt "#31387"
 msgid "DiscArt Fallback-Type"
 msgstr "디스크 아트 대체 유형"
@@ -1460,14 +1448,6 @@ msgctxt "#31418"
 msgid "Widget 5"
 msgstr "위젯 5"
 
-msgctxt "#31419"
-msgid "Big Poster"
-msgstr "대형 포스터"
-
-msgctxt "#31420"
-msgid "Lock view for"
-msgstr "보기 잠금"
-
 msgctxt "#31421"
 msgid "Images"
 msgstr "이미지"
@@ -1476,29 +1456,9 @@ msgctxt "#31422"
 msgid "Big wide"
 msgstr "빅 와이드"
 
-msgctxt "#31423"
-msgid "Big list"
-msgstr "이중 목록"
-
-msgctxt "#31424"
-msgid "Enable forced views (experimental)"
-msgstr "강제 보기 사용(실험용)"
-
 msgctxt "#31425"
 msgid "Seconds"
 msgstr "초"
-
-msgctxt "#31426"
-msgid "Reset forced views"
-msgstr "강제 보기 재설정"
-
-msgctxt "#31427"
-msgid "Forced views"
-msgstr "강제 보기"
-
-msgctxt "#31428"
-msgid "Big icons"
-msgstr "대형 포스터"
 
 msgctxt "#31429"
 msgid "more..."
@@ -1643,14 +1603,6 @@ msgstr "필수 애드온"
 msgctxt "#31469"
 msgid "Recommended addons"
 msgstr "추천 애드온"
-
-msgctxt "#31470"
-msgid "Fixes"
-msgstr "조정"
-
-msgctxt "#31471"
-msgid "Hidden video window to prevent audio errors"
-msgstr "오디오 에러 예방을 위해 비디오 윈도우 숨기기"
 
 msgctxt "#31472"
 msgid "CoreELEC Settings"
@@ -1816,26 +1768,6 @@ msgctxt "#31524"
 msgid "IMDb Position"
 msgstr ""
 
-msgctxt "#31526"
-msgid "Use default selectbox"
-msgstr ""
-
-msgctxt "#31527"
-msgid "Small Fanart"
-msgstr ""
-
-msgctxt "#31528"
-msgid "Small Thumbnail"
-msgstr ""
-
-msgctxt "#31529"
-msgid "Small Poster Thumbnail"
-msgstr ""
-
-msgctxt "#31530"
-msgid "Seasons Info v2"
-msgstr ""
-
 msgctxt "#31533"
 msgid "Clean and minimal"
 msgstr ""
@@ -1880,10 +1812,6 @@ msgctxt "#31564"
 msgid "Low list"
 msgstr ""
 
-msgctxt "#31565"
-msgid "Filenames"
-msgstr ""
-
 msgctxt "#31567"
 msgid "Fallback image"
 msgstr ""
@@ -1894,10 +1822,6 @@ msgstr ""
 
 msgctxt "#31569"
 msgid "Clearlogo instead of title"
-msgstr ""
-
-msgctxt "#31575"
-msgid "Default selectbox"
 msgstr ""
 
 msgctxt "#31576"
@@ -1914,14 +1838,6 @@ msgstr ""
 
 msgctxt "#31589"
 msgid "Enable auto scrolling for titles"
-msgstr ""
-
-msgctxt "#31591"
-msgid "V2"
-msgstr ""
-
-msgctxt "#31592"
-msgid "List type"
 msgstr ""
 
 msgctxt "#31593"
