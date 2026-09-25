@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- TF Changed Horizontal Menu Bar Background Size to represent
+a menu strip and let more of the background show through. -->
+
 <includes>
     <include name="HomeHeader">
 
@@ -206,7 +209,9 @@
             <visible>!Player.HasVideo | !Skin.HasSetting(global.showvideo)</visible>
             <visible>!Skin.HasSetting(home.vertical) | ControlGroup(301).HasFocus</visible>
             <visible>!Control.HasFocus(301) | [Skin.HasSetting(home.classicwidgets) + !$EXP[HomeShowHeader] + ![Player.HasMedia + [Pvr.IsRecording | Pvr.HasTimer | Window.IsVisible(DialogNotification.xml) | Window.IsVisible(DialogExtendedProgressBar.xml) | Window.IsVisible(DialogVolumeBar.xml)]]]</visible>
-            <visible>!$EXP[HomeShowHeader] + !Skin.HasSetting(furniture.weather) + !Skin.HasSetting(furniture.weatherleft)</visible>
+<!-- TF 09/2025 Minor change to visibility conditions to enable weather widget and menu bar temperature & clock to be shown simultaneously.			 -->
+            <visible>!$EXP[HomeShowHeader] + !Skin.HasSetting(furniture.weather)</visible>
+            <!-- <visible>!$EXP[HomeShowHeader] + !Skin.HasSetting(furniture.weather) + !Skin.HasSetting(furniture.weatherleft)</visible> -->
             <visible>!String.IsEmpty(Weather.Plugin)</visible>
             <include>Animation.FadeIn.Slide</include>
             <include>Animation.FadeOut</include>
@@ -712,14 +717,19 @@
                     <visible>Skin.HasSetting(global.showborders) + [!$EXP[HomeIsModernMultiWidgets] | Skin.HasSetting(homemenu.clean.flix)]</visible>
                     <width>100%</width>
                     <height>15</height>
-                    <bottom>210</bottom>
+<!-- TF Adjust image bottom to form a menu "bar" -->
+                    <bottom>181</bottom>
+<!--                    <bottom>210</bottom>  -->
                     <texture colordiffuse="Background">common/shadow-50.png</texture>
                 </control>
                 <control type="image" description="BottomBG">
                     <visible>!$EXP[HomeIsModernMultiWidgets] | Skin.HasSetting(homemenu.clean.flix)</visible>
                     <width>100%</width>
-                    <height>220</height>
-                    <bottom>0</bottom>
+<!-- TF Adjust image bottom to form a menu "bar" -->
+                    <height>160</height>
+                    <bottom>30</bottom>
+<!--                    <height>220</height>
+                    <bottom>0</bottom> -->
                     <aspectratio aligny="bottom">scale</aspectratio>
                     <texture colordiffuse="Background">common/white.png</texture>
                     <animation effect="fade" start="100" end="85" time="0" condition="Skin.HasSetting(homemenu.clean.flix)">Conditional</animation>

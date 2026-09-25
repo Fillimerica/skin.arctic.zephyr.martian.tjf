@@ -2,6 +2,9 @@
 <!-- Foundation -->
 <includes>
     <include file="Defaults.xml"/>
+<!-- TF 09/2025 New include file to support redesigned epg screen. -->
+    <include file="Includes_Guide.xml"/>
+    <include file="Includes_DialogPVRInfo.xml"/>
 
     <!-- Views -->
     <include file="View_50_List.xml"/>

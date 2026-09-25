@@ -5,7 +5,8 @@
         <include content="View_SideBlade">
             <control type="grouplist" id="9000">
                 <include>Def9000GroupList</include>
-                <control type="button" id="9001">
+<!-- TF 09/2005 Removed direct links to other parts of LiveTV from the context menu. These items are reachable from the home menu. -->
+<!--                <control type="button" id="9001">
                     <description>Channels</description>
                     <label>19019</label>
                     <onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVChannels)</onclick>
@@ -61,7 +62,7 @@
                     <include>DefContextButtonGradient</include>
                     <align>left</align>
                 </control>
-                <control type="button" id="28">
+ -->                <control type="button" id="28">
                     <description>Group</description>
                     <include>DefContextButtonGradient</include>
                     <align>left</align>
@@ -72,10 +73,23 @@
                     <align>left</align>
                 </control>
                 <control type="radiobutton" id="9008">
-                    <description>Search</description>
-                    <label>31384</label>
+<!-- TF 09/2025 Change label for hiding show summary on EPG to more descriptive text. -->
+                    <description>Show Summary Control</description>
+                    <label>Hide Show Summary</label>
+                    <!-- <label>31384</label> -->
                     <selected>Skin.HasSetting(pvr.fullepg)</selected>
                     <onclick>Skin.ToggleSetting(pvr.fullepg)</onclick>
+                    <onclick>ReloadSkin()</onclick>
+                    <include>DefContextButtonGradient</include>
+                    <visible>Window.IsVisible(MyPVRGuide.xml)</visible>
+                    <align>left</align>
+                </control>
+<!-- TF 09/2025 Add option to select the larger or the original guide grid size. -->
+                 <control type="radiobutton" id="9009">
+                    <description>Grid View Size Control</description>
+					<label>Large Grid View</label>
+                    <selected>Skin.HasSetting(pvr.bigepg)</selected>
+                    <onclick>Skin.ToggleSetting(pvr.bigepg)</onclick>
                     <onclick>ReloadSkin()</onclick>
                     <include>DefContextButtonGradient</include>
                     <visible>Window.IsVisible(MyPVRGuide.xml)</visible>
@@ -1933,15 +1947,19 @@
     </include>
 
 	<include name="PVRGuideChannelDetails">
-		<param name="top" default="10" />
+<!-- TF Adjust size and elements for the selected program summary -->
+		<param name="height" default="150" />
+<!--		<param name="top" default="10" /> -->
 		<param name="bottom" default="10" />
 		<param name="visible" default="true" />		
 		<definition>
 	        <control type="group">
-	            <top>$PARAM[top]</top>
+	            <height>$PARAM[height]</height>
+<!--	            <top>$PARAM[top]</top> -->
 	            <bottom>$PARAM[bottom]</bottom>
 	            <left>30</left>
-	            <right>30</right>
+	            <right>0</right>
+<!--	            <right>30</right> -->
 	            <visible>$PARAM[visible]</visible>
 	            <control type="group">
 	                <orientation>horizontal</orientation>
@@ -1957,19 +1975,20 @@
                         <label>[COLOR=$VAR[ColorHighlight]]$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ,][/COLOR]$INFO[ListItem.Title,  ,]$VAR[PVREpisodeNumberLabel]        [COLOR=$VAR[ColorHighlight]]$LOCALIZE[515][/COLOR]$INFO[ListItem.Genre,  ,]</label>
 	                </control>
 	            </control>
+<!-- TF 01/2026 Episode and show plot formatting in the textbox. -->
 	            <control type="textbox">
-	                <top>59</top>
-	                <right>240</right>
-	                <height>75</height>
-	                <align>justify</align>
-	                <font>TinyPlot</font>
+	                <top>50</top>
+	                <right>250</right>
+	                <height>120</height>
+	                <align>left</align>
+	                <font>Tiny24</font>
 	                <textcolor>PanelWhite70</textcolor>
 	                <selectedcolor>PanelWhite70</selectedcolor>
-	                <label>$VAR[PVREpisodeLabel,,[CR]]$VAR[PVRPlotLabel]</label>
+	                <label>[B][I]$VAR[PVREpisodeLabel][/I][/B][CR]$INFO[ListItem.Plot]</label>
 	            </control>
                 <control type="image">
                     <visible>String.IsEmpty(Listitem.EpgEventIcon) + String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Fanart))</visible>
-                    <right>-15</right>
+                    <right>5</right>
                     <top>10</top>
                     <width>240</width>
                     <bottom>10</bottom>
@@ -1979,7 +1998,7 @@
                 </control>
 	            <control type="image">
                     <visible>!String.IsEmpty(Listitem.EpgEventIcon) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Fanart))</visible>
-	                <right>-15</right>
+	                <right>5</right>
 	                <top>10</top>
 	                <width>240</width>
 	                <bottom>10</bottom>
