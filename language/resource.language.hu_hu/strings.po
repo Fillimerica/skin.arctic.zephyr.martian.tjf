@@ -17,10 +17,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.3\n"
 
-msgctxt "#31000"
-msgid "Limit number of items in widget"
-msgstr "Elemek száma a widgeteken"
-
 msgctxt "#31002"
 msgid "Animated posters"
 msgstr "Animált poszterek"
@@ -30,12 +26,8 @@ msgid "Animated fanarts"
 msgstr "Animált fanartok"
 
 msgctxt "#31004"
-msgid "Show discart (fanart views)"
-msgstr "Discart megjelenítése (fanart nézetekben)"
-
-msgctxt "#31005"
-msgid "Alternate case (fanart views)"
-msgstr "Lemezborító (fanart nézetekben)"
+msgid "Skin"
+msgstr "Felszín"
 
 msgctxt "#31007"
 msgid "Title-overlays (symbols-view, deprecated)"
@@ -49,10 +41,6 @@ msgctxt "#31009"
 msgid "Scroll entire page"
 msgstr "Lapozzon az egész oldalon"
 
-msgctxt "#31010"
-msgid "Alternate case"
-msgstr "Borítók"
-
 msgctxt "#31011"
 msgid "Show CD and case"
 msgstr "CD és borító mutatása"
@@ -65,12 +53,16 @@ msgctxt "#31014"
 msgid "Netflix"
 msgstr "Netflix"
 
+msgctxt "#31015"
+msgid "Order"
+msgstr "Sorrend"
+
 msgctxt "#31017"
-msgid "Colored icon media flags"
+msgid "Coloured icon media flags"
 msgstr "Színes média ikonok"
 
 msgctxt "#31019"
-msgid "Supported Addons"
+msgid "Supported add-ons"
 msgstr "Támogatott kiegészítők"
 
 msgctxt "#31020"
@@ -178,7 +170,7 @@ msgid "Movie Sets"
 msgstr "Filmgyűjtemények"
 
 msgctxt "#31053"
-msgid "New Tv Shows"
+msgid "New TV Shows"
 msgstr "Új sorozatok"
 
 msgctxt "#31054"
@@ -186,11 +178,11 @@ msgid "Recently Watched TV Shows"
 msgstr "Utoljára nézett sorozatok"
 
 msgctxt "#31056"
-msgid "Random Tv Shows"
+msgid "Random TV Shows"
 msgstr "Véletlenszerű sorozatok"
 
 msgctxt "#31057"
-msgid "Top Rated Tv Shows"
+msgid "Top Rated TV Shows"
 msgstr "Top pontozott sorozatok"
 
 msgctxt "#31058"
@@ -257,10 +249,6 @@ msgctxt "#31076"
 msgid "This view"
 msgstr "Ez a nézet"
 
-msgctxt "#31077"
-msgid "Misc"
-msgstr "Egyéb"
-
 msgctxt "#31078"
 msgid "Global options"
 msgstr "Globális opciók"
@@ -268,6 +256,10 @@ msgstr "Globális opciók"
 msgctxt "#31079"
 msgid "Show discart"
 msgstr "Discart mutatása"
+
+msgctxt "#31080"
+msgid "Fullsize fanart"
+msgstr "Teljesképernyős fanart"
 
 msgctxt "#31081"
 msgid "Double-Flix"
@@ -438,7 +430,7 @@ msgid "Set your favourite settings"
 msgstr "Kedvenc beállításod alkalmazása"
 
 msgctxt "#31126"
-msgid "Accent colors"
+msgid "Accent colours"
 msgstr "Kiemelő színek"
 
 msgctxt "#31133"
@@ -513,13 +505,13 @@ msgctxt "#31153"
 msgid "Show clock"
 msgstr "Órát mutat"
 
-msgctxt "#31154"
-msgid "Show media flags"
-msgstr "Média ikonokat mutat"
-
 msgctxt "#31155"
 msgid "Show now playing info"
 msgstr "Most játszott infót mutat"
+
+msgctxt "#31156"
+msgid "No bookmarks created yet."
+msgstr "Még nincs létrehozva könyvjelző."
 
 msgctxt "#31157"
 msgid "Extended info of"
@@ -534,7 +526,7 @@ msgid "Movies by"
 msgstr "Filmek"
 
 msgctxt "#31160"
-msgid "Tv Shows by"
+msgid "TV Shows by"
 msgstr "Sorozatok"
 
 msgctxt "#31161"
@@ -649,10 +641,6 @@ msgctxt "#31189"
 msgid "Discography of"
 msgstr "Diszkográfia"
 
-msgctxt "#31190"
-msgid "Show icons"
-msgstr "Ikonok mutatása"
-
 msgctxt "#31191"
 msgid "Directed by"
 msgstr "Rendezte"
@@ -702,8 +690,8 @@ msgid "Use horizontal submenu"
 msgstr "Használjon a vízszintes almenüt"
 
 msgctxt "#31203"
-msgid "Artwork Beef"
-msgstr "Artwork Beef"
+msgid "Media Details"
+msgstr ""
 
 msgctxt "#31204"
 msgid "Similar to"
@@ -829,10 +817,6 @@ msgctxt "#31234"
 msgid "Fanart overlay"
 msgstr "Fanart overlay"
 
-msgctxt "#31235"
-msgid "Show banner?"
-msgstr "Bannert mutasson?"
-
 msgctxt "#31236"
 msgid "Now playing..."
 msgstr "Most játszott..."
@@ -842,11 +826,11 @@ msgid "Use minimal busy loader in header"
 msgstr "Használjon minimális betöltőt a fejlécben"
 
 msgctxt "#31238"
-msgid "Select highlight color"
+msgid "Select highlight colour"
 msgstr "Válassza ki a kiemelt színt"
 
 msgctxt "#31239"
-msgid "Current Color"
+msgid "Current Colour"
 msgstr "Jelenlegi szín"
 
 msgctxt "#31240"
@@ -1070,7 +1054,7 @@ msgid "Show plot on HUB"
 msgstr "Tartalom mutatás a hubon"
 
 msgctxt "#31300"
-msgid "Colors"
+msgid "Colours"
 msgstr "Színek"
 
 msgctxt "#31301"
@@ -1154,7 +1138,7 @@ msgid "New Unwatched Episodes"
 msgstr "Új nem látott részek"
 
 msgctxt "#31323"
-msgid "New Unwatched Tv Shows"
+msgid "New Unwatched TV Shows"
 msgstr "Új nem látott sorozatok"
 
 msgctxt "#31324"
@@ -1210,20 +1194,8 @@ msgid "25"
 msgstr "25"
 
 msgctxt "#31340"
-msgid "Auto-scrolling"
+msgid "Autoscroll"
 msgstr "Auto görgetés"
-
-msgctxt "#31341"
-msgid "Widget-listtype"
-msgstr "Widget lista típus"
-
-msgctxt "#31342"
-msgid "List"
-msgstr "Lista"
-
-msgctxt "#31343"
-msgid "Fixed list"
-msgstr "Fix lista"
 
 msgctxt "#31348"
 msgid "Movie Genre Icons"
@@ -1265,14 +1237,6 @@ msgctxt "#31360"
 msgid "Log off: $INFO[system.profilename]"
 msgstr "Kilépés: $INFO[system.profilename]"
 
-msgctxt "#31361"
-msgid "Delete/Disable Settings Menu Item?"
-msgstr "Beállítási elem törtése?"
-
-msgctxt "#31362"
-msgid "Are you sure you want to remove the Settings menu item?[CR]Please ensure that you have an alternative method of accessing Settings before you remove this menu item."
-msgstr "Biztosan eltávolítja a Beállítások menüpontot?[CR] A menüpont eltávolítása előtt győződjön meg arról, hogy van egy másik módja a Beállítások elérésének."
-
 msgctxt "#31363"
 msgid "Power menu"
 msgstr "Kikapcsolási menü"
@@ -1288,6 +1252,10 @@ msgstr "IMDb bemuatók használata"
 msgctxt "#31366"
 msgid "Show Filenames"
 msgstr "Fájlnevek mutatása"
+
+msgctxt "#31368"
+msgid "Show unwatched episodes count"
+msgstr "Nemlátott részek száma"
 
 msgctxt "#31369"
 msgid "Shifted ClearArt"
@@ -1357,20 +1325,12 @@ msgctxt "#31391"
 msgid "Prefer tags instead of rating"
 msgstr "A minősítés helyett a címkéket részesítse előnyben"
 
-msgctxt "#31392"
-msgid "Limit number of items in hub"
-msgstr "Korlátozza a hubban lévő elemek számát"
-
-msgctxt "#31393"
-msgid "Show icons only"
-msgstr "Csak ikonokat mutat"
-
 msgctxt "#31394"
 msgid "Multi-Widgets"
 msgstr "Többszörös widgetek"
 
 msgctxt "#31395"
-msgid "Gradient color for "
+msgid "Gradient colour for "
 msgstr "Gradiens színek "
 
 msgctxt "#31396"
@@ -1389,14 +1349,6 @@ msgctxt "#31401"
 msgid "Aspect ratio"
 msgstr "Oldalarány"
 
-msgctxt "#31402"
-msgid "Select aspect ratio for square widget"
-msgstr "Oldalarány a négyzetes widgetekhez"
-
-msgctxt "#31403"
-msgid "Scale"
-msgstr "Skála"
-
 msgctxt "#31404"
 msgid "Sunrise at"
 msgstr "Napkelte"
@@ -1406,12 +1358,20 @@ msgid "Sunset at"
 msgstr "Napnyugta"
 
 msgctxt "#31406"
-msgid "Square small"
-msgstr "Kis négyzet"
+msgid "Menu bar style"
+msgstr ""
 
 msgctxt "#31407"
-msgid "Square medium"
-msgstr "Közepes négyzet"
+msgid "Text"
+msgstr "Szöveg"
+
+msgctxt "#31408"
+msgid "Icons + Text"
+msgstr "Ikonok + Szöveg"
+
+msgctxt "#31409"
+msgid "Icons"
+msgstr "Ikonok"
 
 msgctxt "#31410"
 msgid "Home menu bar"
@@ -1429,26 +1389,6 @@ msgctxt "#31413"
 msgid "Weather location"
 msgstr "Időjárási helyszín"
 
-msgctxt "#31414"
-msgid "Widget 1"
-msgstr "Widget 1"
-
-msgctxt "#31415"
-msgid "Widget 2"
-msgstr "Widget 2"
-
-msgctxt "#31416"
-msgid "Widget 3"
-msgstr "Widget 3"
-
-msgctxt "#31417"
-msgid "Widget 4"
-msgstr "Widget 4"
-
-msgctxt "#31418"
-msgid "Widget 5"
-msgstr "Widget 5"
-
 msgctxt "#31421"
 msgid "Images"
 msgstr "Képek"
@@ -1460,14 +1400,6 @@ msgstr "Nagy széles"
 msgctxt "#31425"
 msgid "Seconds"
 msgstr "Másodperc"
-
-msgctxt "#31429"
-msgid "more..."
-msgstr "még több..."
-
-msgctxt "#31430"
-msgid "item"
-msgstr "elem"
 
 msgctxt "#31431"
 msgid "Use old Arctic Zephyr window animation"
@@ -1492,10 +1424,6 @@ msgstr "Utoljára hozzáadott dalok"
 msgctxt "#31436"
 msgid "Most played Songs"
 msgstr "Legtöbbet játszott dalok"
-
-msgctxt "#31437"
-msgid "Use old jumpbar (requires script.embuary.helper)"
-msgstr "Régi jumpbar használata (script.embuary.helper szükséges)"
 
 msgctxt "#31438"
 msgid "Genre Poster"
@@ -1536,14 +1464,6 @@ msgstr "Következő rész lejátszása"
 msgctxt "#31452"
 msgid "Widget"
 msgstr "Widget"
-
-msgctxt "#31453"
-msgid "Edge distance"
-msgstr "Peremtávolság"
-
-msgctxt "#31454"
-msgid "30px"
-msgstr "30px"
 
 msgctxt "#31455"
 msgid "Path intros"
@@ -1598,16 +1518,12 @@ msgid "disabled"
 msgstr "tiltva"
 
 msgctxt "#31468"
-msgid "Required addons"
+msgid "Required add-ons"
 msgstr "Kötelező kiegészítők"
 
 msgctxt "#31469"
-msgid "Recommended addons"
+msgid "Recommended add-ons"
 msgstr "Ajánlott kiegészítők"
-
-msgctxt "#31472"
-msgid "CoreELEC Settings"
-msgstr "CoreELEC beállítások"
 
 msgctxt "#31473"
 msgid "Custom widget"
@@ -1624,10 +1540,6 @@ msgstr "Netflix fanart ablak"
 msgctxt "#31476"
 msgid "Boxed Set"
 msgstr "Dobozos set"
-
-msgctxt "#31477"
-msgid "Widget 6"
-msgstr "Widget 6"
 
 msgctxt "#31478"
 msgid "Indicators"
@@ -1665,8 +1577,12 @@ msgctxt "#31487"
 msgid "CPU"
 msgstr "CPU"
 
+msgctxt "#31488"
+msgid "Awards"
+msgstr "Díjak"
+
 msgctxt "#31489"
-msgid "Underlined homemenu items"
+msgid "Underlined home menu items"
 msgstr "Aláhúzott főmenü elemek"
 
 msgctxt "#31492"
@@ -1750,7 +1666,7 @@ msgid "Mini-EPG (vertical, only 5 Items)"
 msgstr ""
 
 msgctxt "#31518"
-msgid "Unwatched Tv Shows"
+msgid "Unwatched TV Shows"
 msgstr ""
 
 msgctxt "#31520"
@@ -1897,10 +1813,6 @@ msgctxt "#31623"
 msgid "If home menu is focused, jump to widgets on back"
 msgstr ""
 
-msgctxt "#31625"
-msgid "Disable addons fanart"
-msgstr ""
-
 msgctxt "#31630"
 msgid "Hub widget content type"
 msgstr ""
@@ -1912,10 +1824,6 @@ msgstr ""
 msgctxt "#31632"
 msgid "Stop playback when item is no longer focused"
 msgstr ""
-
-msgctxt "#31643"
-msgid "LibreELEC Settings"
-msgstr "LibreELEC Beállítások"
 
 msgctxt "#31650"
 msgid "Is playing"
@@ -1935,10 +1843,6 @@ msgstr "Most játszva"
 
 msgctxt "#31663"
 msgid "Now playing..."
-msgstr ""
-
-msgctxt "#31667"
-msgid "Animated artwork"
 msgstr ""
 
 msgctxt "#31668"
@@ -1970,12 +1874,8 @@ msgid "Show detailed info when video starts (in seconds)"
 msgstr ""
 
 msgctxt "#31679"
-msgid "Color presets"
+msgid "Colour presets"
 msgstr ""
-
-msgctxt "#31680"
-msgid "Preset"
-msgstr "Előbeállítás"
 
 msgctxt "#31689"
 msgid "Hide PVR recording dialog"
@@ -1997,28 +1897,16 @@ msgctxt "#31693"
 msgid "Online"
 msgstr ""
 
-msgctxt "#31694"
-msgid "Game studio/flag icons"
-msgstr ""
-
 msgctxt "#31699"
-msgid "Pick a color..."
+msgid "Pick a colour..."
 msgstr ""
 
 msgctxt "#31700"
-msgid "Set color"
+msgid "Set colour"
 msgstr ""
 
 msgctxt "#31703"
 msgid "Small landscape"
-msgstr ""
-
-msgctxt "#31704"
-msgid "Small fanart"
-msgstr ""
-
-msgctxt "#31705"
-msgid "Small poster fanart"
 msgstr ""
 
 msgctxt "#31707"

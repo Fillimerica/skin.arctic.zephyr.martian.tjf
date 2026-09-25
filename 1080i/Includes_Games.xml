@@ -7,61 +7,49 @@
 		<value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
 		<value>$INFO[ListItem.Label]</value>
 	</variable>
+	
 	<variable name="GamePlot">
 		<value condition="!String.IsEmpty(Game.Overview)">$INFO[Game.Overview]</value>
 		<value condition="!String.IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
 		<value>$INFO[ListItem.AddonSummary]</value>
 	</variable>
+	
 	<variable name="GameStudio">
 		<value condition="!String.IsEmpty(Game.Developer)">$INFO[Game.Developer]</value>
 		<value>$INFO[ListItem.Studio]</value>
 	</variable>
+	
 	<variable name="GameGenre">
 		<value condition="!String.IsEmpty(Game.Genres)">$INFO[Game.Genres]</value>
 		<value>$INFO[ListItem.Genre]</value>
 	</variable>
+	
 	<variable name="GameYear">
 		<value condition="!String.IsEmpty(Game.Year)">$INFO[Game.Year]</value>
 		<value>$INFO[ListItem.Year]</value>
 	</variable>
+	
 	<variable name="GameRating">
 		<value>$INFO[ListItem.Rating]</value>
 	</variable>
+	
 	<variable name="GameESRB">
 		<value>$INFO[ListItem.Property(esrb)]</value>
 	</variable>
-	<variable name="OneOrMoreLocalPlayersVar">
-		<value condition="String.IsEqual(Container.ListItem.Property(nplayers),1) | String.IsEqual(ListItem.Property(nplayers),1)">$LOCALIZE[31690]</value>
-		<value>$LOCALIZE[31691]</value>
-	</variable>
-	<variable name="OneOrMoreOnlinePlayersVar">
-		<value condition="String.IsEqual(Container.ListItem.Property(nplayers_online),1) | String.IsEqual(ListItem.Property(nplayers_online),1)">$LOCALIZE[31690]</value>
-		<value>$LOCALIZE[31691]</value>
-	</variable>
+
 	<variable name="GameAudioFlag">
 		<value condition="String.Contains(ListItem.Property(tags),atmos)">atmos</value>
 		<value condition="String.Contains(ListItem.Property(tags),dtsx) | String.Contains(ListItem.Property(tags),dts-x)">dtsx</value>
 		<value condition="String.Contains(ListItem.Property(tags),dts) | String.Contains(ListItem.Property(tags),dca)">dts</value>
-		<value condition="String.Contains(ListItem.Property(tags),dolby hd)">dtshd_hra</value>
-		<value condition="String.Contains(ListItem.Property(tags),dolby digital)">eac3</value>
+		<value condition="String.Contains(ListItem.Property(tags),dolby hd)">truehd</value>
+		<value condition="String.Contains(ListItem.Property(tags),dolby digital)">dolbydigital</value>
 	</variable>
+	
 	<variable name="GameResolutionFlag">
 		<value condition="String.Contains(ListItem.Property(tags),480)">480</value>
 		<value condition="String.Contains(ListItem.Property(tags),720)">720</value>
 		<value condition="String.Contains(ListItem.Property(tags),1080)">1080</value>
 		<value condition="String.Contains(ListItem.Property(tags),4K)">4K</value>
-	</variable>
-
-	<variable name="GameStudioFlag">
-		<value condition="!String.IsEmpty(Skin.String(game.logos.path))">$INFO[Skin.String(game.logos.path)]$INFO[ListItem.Studio,,.png]</value>
-	</variable>
-	<variable name="GameESRBFlag">
-		<value condition="!String.IsEmpty(Skin.String(game.logos.path))">$INFO[Skin.String(game.logos.path),,esrb/]$INFO[ListItem.Property(esrb),,.png]</value>
-	</variable>
-	<variable name="GameMultiplayerTypeFlag">
-		<value condition="!String.IsEmpty(Skin.String(game.logos.path)) + String.Contains(ListItem.Property(tags),vs)">$INFO[Skin.String(game.logos.path),,flags/vs.png]</value>
-		<value condition="!String.IsEmpty(Skin.String(game.logos.path)) + String.Contains(ListItem.Property(tags),co-op)">$INFO[Skin.String(game.logos.path),,flags/co-op.png]</value>
-		<value condition="!String.IsEmpty(Skin.String(game.logos.path)) + String.Contains(ListItem.Property(tags),coop)">$INFO[Skin.String(game.logos.path),,flags/co-op.png]</value>
 	</variable>
 
 	<variable name="GameThumb">
@@ -70,68 +58,6 @@
 		<value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
 		<value>DefaultAddonGame.png</value>
 	</variable>
-
-	<include name="NumberOfPlayersFurniture">
-		<control type="group" description="NumberOfPlayers">
-			<width>100</width>
-			<height>100</height>
-			<top>8</top>
-			<visible>!String.IsEmpty(ListItem.Property($PARAM[nplayerfield]))</visible>
-			<control type="image">
-				<width>100%</width>
-				<height>100%</height>
-				<texture colordiffuse="Box2" border="4" background="true" infill="false">common/box21.png</texture>
-			</control>
-			<control type="grouplist">
-				<width>100</width>
-				<itemgap>0</itemgap>
-				<orientation>vertical</orientation>
-				<control type="label">
-					<width>100%</width>
-					<height>20</height>
-					<aligny>center</aligny>
-					<align>center</align>
-					<font>Flag</font>
-					<textcolor>Dark1</textcolor>
-					<label>$LOCALIZE[$PARAM[textid]]</label>
-				</control>
-				<control type="group">
-					<height>50</height>
-					<width>100</width>
-					<align>center</align>
-					<control type="image">
-						<left>5</left>
-						<width>50</width>
-						<height>50</height>
-						<texture colordiffuse="Dark1">DefaultActor.png</texture>					
-					</control>
-					<control type="label">
-						<left>60</left>
-						<height>50</height>
-						<label>$INFO[ListItem.Property($PARAM[nplayerfield])]</label>
-						<aligny>center</aligny>
-						<align>left</align>
-						<font>Flag</font>
-						<textcolor>Dark1</textcolor>
-					</control>
-				</control>
-				<control type="label">
-					<height>20</height>
-					<aligny>center</aligny>
-					<align>center</align>
-					<font>Flag</font>
-					<textcolor>Dark1</textcolor>
-					<label>$VAR[$PARAM[playersTextId]]</label>
-				</control>
-			</control>	 
-		</control>
-		<control type="textbox">
-			<left>1</left>
-			<width>10</width>
-			<label></label>
-			<height>50</height>
-		</control>
-	</include>
 
 	<include name="GameDialogControllers">
 		<include content="DefDialog">
@@ -265,11 +191,13 @@
                     <description>Install More Controllers</description>
                     <include>DefDialogButtons</include>
                     <label>$LOCALIZE[21452]</label>
+                    <visible>Control.IsEnabled(20)</visible>
                 </control>
                 <control type="button" id="22">
                     <description>Install All</description>
                     <include>DefDialogButtons</include>
                     <label>$LOCALIZE[35021]</label>
+                    <visible>Control.IsEnabled(22)</visible>
                 </control>
                 <control type="button" id="17">
                     <description>Help</description>
@@ -424,8 +352,8 @@
 	            </focusedlayout>
             </control>
 			
-            <include content="scrollbar_dialog">				
-                <param name="scrollid" value="1000"/>
+            <include content="Furniture_Scrollbar_Dialog">				
+                <param name="id" value="1000"/>
                 <param name="onleft" value="3"/>
                 <param name="onright" value="9001"/>
                 <param name="height" value="698" />
@@ -823,4 +751,152 @@
 			</control>
  		</definition>	
 	</include>
+	
+	<include name="GameDialogDiscManager">
+       <control type="group">
+            <include content="DefDialogBackground">
+                <param name="width" value="900"/>
+                <param name="height" value="480"/>
+            </include>
+
+            <control type="label">
+                <include>DefDialogHeader</include>
+                <label>$LOCALIZE[35272]</label>
+            </control>
+
+            <include content="Kodi_Logo">
+                <param name="dimensions" value="40"/>
+                <param name="top" value="40"/>
+                <param name="left" value="40"/>
+            </include>
+
+            <!-- Lines -->
+            <control type="image">
+                <top>95</top>
+                <left>40</left>
+                <right>40</right>
+                <height>1</height>
+                <bottom>10</bottom>
+                <colordiffuse>Black12</colordiffuse>
+                <texture>common/white.png</texture>
+            </control>  
+
+			<include content="Def9000Arrows">
+				<param name="arrow_bottom" value="480" />
+			</include>
+
+			<control type="group">
+				<description>Visibility group for main menu</description>
+				<visible>String.IsEqual(Window.Property(GameDiscManager.ShowMenu),true)</visible>
+
+				<include content="Def_Gradient_Settings_Image">
+					<param name="controlid" value="9000" />
+					<param name="top" value="112" />
+					<param name="left" value="8" />
+					<param name="right" value="8" />
+					<param name="align_right" value="true" />
+				</include>
+				<control type="grouplist" id="9000">
+                    <top>112</top>
+                    <left>8</left>
+                    <right>8</right>
+                    <bottom>18</bottom>
+					<itemgap>0</itemgap>
+					<usecontrolcoords>true</usecontrolcoords>
+					<scrolltime>0</scrolltime>
+					<control type="button" id="108323">
+						<align>left</align>
+						<width>100%</width>
+						<include>DefContextButtonGradient</include>
+						<label>$LOCALIZE[35273]</label>
+						<label2>$LOCALIZE[35274]</label2>
+						<enable>RetroPlayer.DiscEjected</enable>
+					</control>
+					<control type="button" id="108324">
+						<align>left</align>
+						<width>100%</width>
+						<include>DefContextButtonGradient</include>
+						<label>$LOCALIZE[35275]</label>
+					</control>
+					<control type="button" id="108325">
+						<align>left</align>
+						<width>100%</width>
+						<include>DefContextButtonGradient</include>
+						<label>$LOCALIZE[15019]</label>
+						<enable>RetroPlayer.DiscEjected</enable>
+					</control>
+					<control type="button" id="108326">
+						<align>left</align>
+						<width>100%</width>
+						<include>DefContextButtonGradient</include>
+						<label>$LOCALIZE[1210]</label>
+						<enable>RetroPlayer.DiscEjected</enable>
+					</control>
+					<control type="button" id="108327">
+						<align>left</align>
+						<width>100%</width>
+						<include>DefContextButtonGradient</include>
+						<label>$LOCALIZE[35277]</label>
+					</control>
+				</control>
+			</control>
+				
+			<control type="group">
+				<description>Visibility group for disc list</description>
+				<visible>String.IsEqual(Window.Property(GameDiscManager.ShowDiscList),true)</visible>
+
+				<control type="list" id="208321">
+					<description>Disc list</description>
+                    <top>112</top>
+                    <left>8</left>
+                    <right>8</right>
+                    <bottom>18</bottom>
+					<itemlayout width="884" height="70">
+		                <control type="label">
+		                    <left>30</left>
+		                    <right>30</right>
+		                    <font>SmallBold</font>
+		                    <textcolor>Black70</textcolor>
+		                    <selectedcolor>Black70</selectedcolor>
+		                    <height>67</height>
+		                    <aligny>center</aligny>
+		                    <info>ListItem.Label</info>
+		                </control>
+					</itemlayout>
+					<focusedlayout width="884" height="70">
+	                    <control type="image">
+	                        <left>0</left>
+	                        <right>0</right>
+	                        <height>67</height>
+	                        <texture border="5" colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+	                    </control>
+	                    <control type="image">
+	                        <left>0</left>
+	                        <right>0</right>
+	                        <height>67</height>
+	                        <texture border="8" colordiffuse="$VAR[ColorGradient]">common/gradient-box-wide-cut.png</texture>
+	                    </control>
+	                    <control type="label">
+	                        <left>30</left>
+	                        <right>30</right>
+	                        <height>67</height>
+	                        <font>SmallBold</font>
+	                        <textcolor>Selected</textcolor>
+	                        <selectedcolor>Selected</selectedcolor>
+	                        <aligny>center</aligny>
+	                        <info>ListItem.Label</info>
+	                    </control>
+					</focusedlayout>
+				</control>
+			</control>
+
+			<control type="button" id="3">
+				<include>HiddenButton</include>
+				<onfocus condition="Control.IsEnabled(108321)">Control.SetFocus(108321)</onfocus>
+				<onfocus condition="Control.IsEnabled(108323)">Control.SetFocus(108323)</onfocus>
+				<onfocus condition="Control.IsEnabled(108324)">Control.SetFocus(108324)</onfocus>
+			</control>
+		</control>	
+	</include>
+		
 </includes>

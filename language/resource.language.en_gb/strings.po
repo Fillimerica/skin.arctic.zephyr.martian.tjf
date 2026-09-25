@@ -17,8 +17,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0\n"
 
-msgctxt "#31000"
-msgid "Limit number of items in widget"
+msgctxt "#31001"
+msgid "Prefer landscape art"
 msgstr ""
 
 msgctxt "#31002"
@@ -30,11 +30,7 @@ msgid "Animated fanarts"
 msgstr ""
 
 msgctxt "#31004"
-msgid "Show discart (fanart views)"
-msgstr ""
-
-msgctxt "#31005"
-msgid "Alternate case (fanart views)"
+msgid "Skin"
 msgstr ""
 
 msgctxt "#31007"
@@ -49,10 +45,6 @@ msgctxt "#31009"
 msgid "Scroll entire page"
 msgstr ""
 
-msgctxt "#31010"
-msgid "Alternate case"
-msgstr ""
-
 msgctxt "#31011"
 msgid "Show CD and case"
 msgstr ""
@@ -65,12 +57,16 @@ msgctxt "#31014"
 msgid "Netflix"
 msgstr ""
 
+msgctxt "#31015"
+msgid "Order"
+msgstr ""
+
 msgctxt "#31017"
-msgid "Colored icon media flags"
+msgid "Coloured icon media flags"
 msgstr ""
 
 msgctxt "#31019"
-msgid "Supported Addons"
+msgid "Supported add-ons"
 msgstr ""
 
 msgctxt "#31020"
@@ -182,7 +178,7 @@ msgid "Movie Sets"
 msgstr ""
 
 msgctxt "#31053"
-msgid "New Tv Shows"
+msgid "New TV Shows"
 msgstr ""
 
 msgctxt "#31054"
@@ -190,11 +186,11 @@ msgid "Recently Watched TV Shows"
 msgstr ""
 
 msgctxt "#31056"
-msgid "Random Tv Shows"
+msgid "Random TV Shows"
 msgstr ""
 
 msgctxt "#31057"
-msgid "Top Rated Tv Shows"
+msgid "Top Rated TV Shows"
 msgstr ""
 
 msgctxt "#31058"
@@ -241,6 +237,14 @@ msgctxt "#31068"
 msgid "Random Artists"
 msgstr ""
 
+msgctxt "#31069"
+msgid "Next Up"
+msgstr ""
+
+msgctxt "#31070"
+msgid "Recent Episodes Grouped"
+msgstr ""
+
 msgctxt "#31071"
 msgid "Show fanart/landscape view"
 msgstr ""
@@ -261,16 +265,16 @@ msgctxt "#31076"
 msgid "This view"
 msgstr ""
 
-msgctxt "#31077"
-msgid "Misc"
-msgstr ""
-
 msgctxt "#31078"
 msgid "Global options"
 msgstr ""
 
 msgctxt "#31079"
 msgid "Show discart"
+msgstr ""
+
+msgctxt "#31080"
+msgid "Fullsize fanart"
 msgstr ""
 
 msgctxt "#31081"
@@ -446,7 +450,27 @@ msgid "Set your favourite settings"
 msgstr ""
 
 msgctxt "#31126"
-msgid "Accent colors"
+msgid "Accent colours"
+msgstr ""
+
+msgctxt "#31127"
+msgid "Video sources"
+msgstr ""
+
+msgctxt "#31128"
+msgid "Music sources"
+msgstr ""
+
+msgctxt "#31129"
+msgid "Picture sources"
+msgstr ""
+
+msgctxt "#31130"
+msgid "File sources"
+msgstr ""
+
+msgctxt "#31131"
+msgid "item"
 msgstr ""
 
 msgctxt "#31133"
@@ -522,11 +546,15 @@ msgid "Show clock"
 msgstr ""
 
 msgctxt "#31154"
-msgid "Show media flags"
+msgid "Show media flags in footer"
 msgstr ""
 
 msgctxt "#31155"
 msgid "Show now playing info"
+msgstr ""
+
+msgctxt "#31156"
+msgid "No bookmarks created yet."
 msgstr ""
 
 msgctxt "#31157"
@@ -542,7 +570,7 @@ msgid "Movies by"
 msgstr ""
 
 msgctxt "#31160"
-msgid "Tv Shows by"
+msgid "TV Shows by"
 msgstr ""
 
 msgctxt "#31161"
@@ -657,10 +685,6 @@ msgctxt "#31189"
 msgid "Discography of"
 msgstr ""
 
-msgctxt "#31190"
-msgid "Show icons"
-msgstr ""
-
 msgctxt "#31191"
 msgid "Directed by"
 msgstr ""
@@ -710,7 +734,7 @@ msgid "Use horizontal submenu"
 msgstr ""
 
 msgctxt "#31203"
-msgid "Artwork Beef"
+msgid "Media Details"
 msgstr ""
 
 msgctxt "#31204"
@@ -837,10 +861,6 @@ msgctxt "#31234"
 msgid "Fanart overlay"
 msgstr ""
 
-msgctxt "#31235"
-msgid "Show banner?"
-msgstr ""
-
 msgctxt "#31236"
 msgid "Now playing..."
 msgstr ""
@@ -850,11 +870,11 @@ msgid "Use minimal busy loader in header"
 msgstr ""
 
 msgctxt "#31238"
-msgid "Select highlight color"
+msgid "Select highlight colour"
 msgstr ""
 
 msgctxt "#31239"
-msgid "Current Color"
+msgid "Current Colour"
 msgstr ""
 
 msgctxt "#31240"
@@ -1082,7 +1102,7 @@ msgid "Show plot on HUB"
 msgstr ""
 
 msgctxt "#31300"
-msgid "Colors"
+msgid "Colours"
 msgstr ""
 
 msgctxt "#31301"
@@ -1166,7 +1186,7 @@ msgid "New Unwatched Episodes"
 msgstr ""
 
 msgctxt "#31323"
-msgid "New Unwatched Tv Shows"
+msgid "New Unwatched TV Shows"
 msgstr ""
 
 msgctxt "#31324"
@@ -1221,20 +1241,20 @@ msgctxt "#31338"
 msgid "25"
 msgstr ""
 
+msgctxt "#31339"
+msgid "Reset all menus and widgets to defaults"
+msgstr ""
+
 msgctxt "#31340"
-msgid "Auto-scrolling"
+msgid "Autoscroll"
 msgstr ""
 
 msgctxt "#31341"
-msgid "Widget-listtype"
+msgid "Recommended Movies"
 msgstr ""
 
 msgctxt "#31342"
-msgid "List"
-msgstr ""
-
-msgctxt "#31343"
-msgid "Fixed list"
+msgid "Recommended TV Shows"
 msgstr ""
 
 msgctxt "#31347"
@@ -1286,11 +1306,11 @@ msgid "Log off: $INFO[system.profilename]"
 msgstr ""
 
 msgctxt "#31361"
-msgid "Delete/Disable Settings Menu Item?"
+msgid "Customise Widgets"
 msgstr ""
 
 msgctxt "#31362"
-msgid "Are you sure you want to remove the Settings menu item?[CR]Please ensure that you have an alternative method of accessing Settings before you remove this menu item."
+msgid "Customise Hub Menu"
 msgstr ""
 
 msgctxt "#31363"
@@ -1307,6 +1327,10 @@ msgstr ""
 
 msgctxt "#31366"
 msgid "Show Filenames"
+msgstr ""
+
+msgctxt "#31368"
+msgid "Show unwatched episodes count"
 msgstr ""
 
 msgctxt "#31369"
@@ -1381,20 +1405,12 @@ msgctxt "#31391"
 msgid "Prefer tags instead of rating"
 msgstr ""
 
-msgctxt "#31392"
-msgid "Limit number of items in hub"
-msgstr ""
-
-msgctxt "#31393"
-msgid "Show icons only"
-msgstr ""
-
 msgctxt "#31394"
 msgid "Multi-Widgets"
 msgstr ""
 
 msgctxt "#31395"
-msgid "Gradient color for "
+msgid "Gradient colour for "
 msgstr ""
 
 msgctxt "#31396"
@@ -1413,14 +1429,6 @@ msgctxt "#31401"
 msgid "Aspect ratio"
 msgstr ""
 
-msgctxt "#31402"
-msgid "Select aspect ratio for square widget"
-msgstr ""
-
-msgctxt "#31403"
-msgid "Scale"
-msgstr ""
-
 msgctxt "#31404"
 msgid "Sunrise at"
 msgstr ""
@@ -1430,11 +1438,19 @@ msgid "Sunset at"
 msgstr ""
 
 msgctxt "#31406"
-msgid "Square small"
+msgid "Menu bar style"
 msgstr ""
 
 msgctxt "#31407"
-msgid "Square medium"
+msgid "Text"
+msgstr ""
+
+msgctxt "#31408"
+msgid "Icons + Text"
+msgstr ""
+
+msgctxt "#31409"
+msgid "Icons"
 msgstr ""
 
 msgctxt "#31410"
@@ -1451,26 +1467,6 @@ msgstr ""
 
 msgctxt "#31413"
 msgid "Weather location"
-msgstr ""
-
-msgctxt "#31414"
-msgid "Widget 1"
-msgstr ""
-
-msgctxt "#31415"
-msgid "Widget 2"
-msgstr ""
-
-msgctxt "#31416"
-msgid "Widget 3"
-msgstr ""
-
-msgctxt "#31417"
-msgid "Widget 4"
-msgstr ""
-
-msgctxt "#31418"
-msgid "Widget 5"
 msgstr ""
 
 msgctxt "#31421"
@@ -1494,11 +1490,11 @@ msgid "Seconds"
 msgstr ""
 
 msgctxt "#31429"
-msgid "more..."
+msgid "Show more..."
 msgstr ""
 
 msgctxt "#31430"
-msgid "item"
+msgid "Limited widgets have \"more items\" object"
 msgstr ""
 
 msgctxt "#31431"
@@ -1526,7 +1522,7 @@ msgid "Most played Songs"
 msgstr ""
 
 msgctxt "#31437"
-msgid "Use old jumpbar (requires script.embuary.helper)"
+msgid "Use Skin Info Service alphabet scrollbar"
 msgstr ""
 
 msgctxt "#31438"
@@ -1567,14 +1563,6 @@ msgstr ""
 
 msgctxt "#31452"
 msgid "Widget"
-msgstr ""
-
-msgctxt "#31453"
-msgid "Edge distance"
-msgstr ""
-
-msgctxt "#31454"
-msgid "30px"
 msgstr ""
 
 msgctxt "#31455"
@@ -1630,15 +1618,11 @@ msgid "disabled"
 msgstr ""
 
 msgctxt "#31468"
-msgid "Required addons"
+msgid "Required add-ons"
 msgstr ""
 
 msgctxt "#31469"
-msgid "Recommended addons"
-msgstr ""
-
-msgctxt "#31472"
-msgid "CoreELEC Settings"
+msgid "Recommended add-ons"
 msgstr ""
 
 msgctxt "#31473"
@@ -1658,11 +1642,15 @@ msgid "Boxed Set"
 msgstr ""
 
 msgctxt "#31477"
-msgid "Widget 6"
+msgid "Select icon"
 msgstr ""
 
 msgctxt "#31478"
 msgid "Indicators"
+msgstr ""
+
+msgctxt "#31479"
+msgid "Content type"
 msgstr ""
 
 msgctxt "#31480"
@@ -1697,8 +1685,20 @@ msgctxt "#31487"
 msgid "CPU"
 msgstr ""
 
+msgctxt "#31488"
+msgid "Awards"
+msgstr ""
+
 msgctxt "#31489"
-msgid "Underlined homemenu items"
+msgid "Underlined home menu items"
+msgstr ""
+
+msgctxt "#31490"
+msgid "MDBList"
+msgstr ""
+
+msgctxt "#31491"
+msgid "Letterboxd"
 msgstr ""
 
 msgctxt "#31492"
@@ -1731,6 +1731,10 @@ msgstr ""
 
 msgctxt "#31500"
 msgid "Prefer percentage"
+msgstr ""
+
+msgctxt "#31501"
+msgid "[B]Manage Files[/B][CR][CR] •     Copy[CR] •     Move[CR] •     Delete[CR] •     Rename[CR] •     Manage Source"
 msgstr ""
 
 msgctxt "#31502"
@@ -1773,6 +1777,10 @@ msgctxt "#31513"
 msgid "Override play function with TMDB helper play function"
 msgstr ""
 
+msgctxt "#31514"
+msgid "Skin Playlists"
+msgstr ""
+
 msgctxt "#31516"
 msgid "Last Played Radio Channels"
 msgstr ""
@@ -1782,7 +1790,7 @@ msgid "Mini-EPG (vertical, only 5 Items)"
 msgstr ""
 
 msgctxt "#31518"
-msgid "Unwatched Tv Shows"
+msgid "Unwatched TV Shows"
 msgstr ""
 
 msgctxt "#31520"
@@ -1937,10 +1945,6 @@ msgctxt "#31623"
 msgid "If home menu is focused, jump to widgets on back"
 msgstr ""
 
-msgctxt "#31625"
-msgid "Disable addons fanart"
-msgstr ""
-
 msgctxt "#31630"
 msgid "Hub widget content type"
 msgstr ""
@@ -1951,10 +1955,6 @@ msgstr ""
 
 msgctxt "#31632"
 msgid "Stop playback when item is no longer focused"
-msgstr ""
-
-msgctxt "#31643"
-msgid "LibreELEC Settings"
 msgstr ""
 
 msgctxt "#31650"
@@ -1978,7 +1978,7 @@ msgid "Now playing..."
 msgstr ""
 
 msgctxt "#31667"
-msgid "Animated artwork"
+msgid "Artwork"
 msgstr ""
 
 msgctxt "#31668"
@@ -2010,11 +2010,15 @@ msgid "Show detailed info when video starts (in seconds)"
 msgstr ""
 
 msgctxt "#31679"
-msgid "Color presets"
+msgid "Colour presets"
 msgstr ""
 
 msgctxt "#31680"
-msgid "Preset"
+msgid "Skin colour theme"
+msgstr ""
+
+msgctxt "#31681"
+msgid "Auto day and night mode"
 msgstr ""
 
 msgctxt "#31689"
@@ -2037,16 +2041,16 @@ msgctxt "#31693"
 msgid "Online"
 msgstr ""
 
-msgctxt "#31694"
-msgid "Game studio/flag icons"
-msgstr ""
-
 msgctxt "#31699"
-msgid "Pick a color..."
+msgid "Pick a colour..."
 msgstr ""
 
 msgctxt "#31700"
-msgid "Set color"
+msgid "Set colour"
+msgstr ""
+
+msgctxt "#31702"
+msgid "Use thumb for episodes background"
 msgstr ""
 
 msgctxt "#31703"
@@ -2054,11 +2058,7 @@ msgid "Small landscape"
 msgstr ""
 
 msgctxt "#31704"
-msgid "Small fanart"
-msgstr ""
-
-msgctxt "#31705"
-msgid "Small poster fanart"
+msgid "Small poster landscape"
 msgstr ""
 
 msgctxt "#31707"
@@ -2074,7 +2074,7 @@ msgid "Wikipedia"
 msgstr ""
 
 msgctxt "#31712"
-msgid "Ratings"
+msgid "Additional ratings"
 msgstr ""
 
 msgctxt "#31713"
@@ -2137,6 +2137,22 @@ msgctxt "#31820"
 msgid "Prevent reload"
 msgstr ""
 
+msgctxt "#31821"
+msgid "Auto-fit to width"
+msgstr ""
+
+msgctxt "#31822"
+msgid "Limit"
+msgstr ""
+
+msgctxt "#31823"
+msgid "Autoscroll time interval"
+msgstr ""
+
+msgctxt "#31824"
+msgid "Hub-Limit"
+msgstr ""
+
 msgctxt "#31900"
 msgid "OSD position"
 msgstr ""
@@ -2145,12 +2161,32 @@ msgctxt "#31901"
 msgid "Bottom"
 msgstr ""
 
+msgctxt "#31902"
+msgid "Onyx"
+msgstr ""
+
 msgctxt "#31903"
 msgid "Cloudiness"
 msgstr ""
 
 msgctxt "#31905"
 msgid "Nodes"
+msgstr ""
+
+msgctxt "#31906"
+msgid "Autohide seekbar after pausing"
+msgstr ""
+
+msgctxt "#31907"
+msgid "Playback Speed"
+msgstr ""
+
+msgctxt "#31936"
+msgid "Unknown"
+msgstr ""
+
+msgctxt "#31937"
+msgid "Do not show subtitles"
 msgstr ""
 
 msgctxt "#31939"
@@ -2217,20 +2253,8 @@ msgctxt "#31954"
 msgid "Purple"
 msgstr ""
 
-msgctxt "#31955"
-msgid "Blue"
-msgstr ""
-
-msgctxt "#31956"
-msgid "Green"
-msgstr ""
-
 msgctxt "#31957"
 msgid "Pink"
-msgstr ""
-
-msgctxt "#31958"
-msgid "Orange"
 msgstr ""
 
 msgctxt "#31959"
@@ -2258,15 +2282,15 @@ msgid "Simple Gray"
 msgstr ""
 
 msgctxt "#31965"
-msgid "Highlight color"
+msgid "Highlight colour"
 msgstr ""
 
 msgctxt "#31966"
-msgid "Gradient color"
+msgid "Gradient colour"
 msgstr ""
 
 msgctxt "#31967"
-msgid "Customise color settings"
+msgid "Customise colour settings"
 msgstr ""
 
 msgctxt "#31968"
@@ -2326,7 +2350,7 @@ msgid "Default (Unicode)"
 msgstr ""
 
 msgctxt "#31982"
-msgid "Lock position of focused item"
+msgid "Show bookmarks"
 msgstr ""
 
 msgctxt "#31983"
@@ -2370,5 +2394,5 @@ msgid "Prefer online artwork"
 msgstr ""
 
 msgctxt "#31993"
-msgid "Timed change of color scheme"
+msgid "Timed change of colour scheme"
 msgstr ""

@@ -2,57 +2,10 @@
 <includes>
 
     <include name="PVRSideBlade">
-        <control type="group">
-            <include>Animation.FadeIn</include>
-            <include>Animation.FadeOut</include>
-            <visible>ControlGroup(9000).HasFocus()</visible>
-            <include>GlobalOverlay</include>
-        </control>
-        <control type="group">
-            <height>690</height>
-            <include>Def9000Background</include>
-            <include>Def9000Arrows</include>
-            <control type="group">
-                <left>22</left>
-                <top>22</top>
-                <control type="label">
-                    <description>Header Label</description>
-                    <left>70</left>
-                    <width>1000</width>
-                    <posy>0</posy>
-                    <include>FontTop</include>
-                    <textcolor>Black70</textcolor>
-                    <label>14018</label>
-                </control>
-                <include>Kodi_Logo</include>
-
-                <!-- Lines -->
-                <control type="image">
-                    <top>70</top>
-                    <left>17</left>
-                    <width>385</width>
-                    <height>1</height>
-                    <bottom>10</bottom>
-                    <colordiffuse>Black12</colordiffuse>
-                    <texture>common/white.png</texture>
-                </control>
-            </control>
-            <include content="Def_Gradient_Settings_Image">
-                <param name="controlid" value="9000"/>
-                <param name="left" value="8"/>
-                <param name="top" value="110"/>
-                <param name="width" value="450"/>
-                <param name="overlayfix" value="true"/>
-                <param name="delay" value="20"/>
-                <param name="visible" value="!ControlGroup(6150).HasFocus()"/>
-            </include>
+        <include content="View_SideBlade">
             <control type="grouplist" id="9000">
-                <top>110</top>
-                <scrolltime>0</scrolltime>
-                <usecontrolcoords>true</usecontrolcoords>
-                <include content="Def9000GroupList"><param name="height" value="560" /></include>
-<!-- TF 09/2005 Removed direct links to other parts of LiveTV from the context menu. These items are reachable from the home menu. -->
- <!--                <control type="button" id="9001">
+                <include>Def9000GroupList</include>
+                <control type="button" id="9001">
                     <description>Channels</description>
                     <label>19019</label>
                     <onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVChannels)</onclick>
@@ -77,6 +30,14 @@
                     <align>left</align>
                 </control>
                 <control type="button" id="9004">
+                    <description>Providers</description>
+                    <label>19334</label>
+                    <onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVProviders)</onclick>
+                    <onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioProviders)</onclick>
+                    <include>DefContextButtonGradient</include>
+                    <align>left</align>
+                </control>
+                <control type="button" id="9005">
                     <description>Timers</description>
                     <label>19040</label>
                     <onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimers)</onclick>
@@ -84,7 +45,7 @@
                     <include>DefContextButtonGradient</include>
                     <align>left</align>
                 </control>
-                <control type="button" id="9005">
+                <control type="button" id="9006">
                     <description>Search</description>
                     <label>19138</label>
                     <onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TvTimerRules)</onclick>
@@ -92,7 +53,7 @@
                     <include>DefContextButtonGradient</include>
                     <align>left</align>
                 </control>
-                <control type="button" id="9006">
+                <control type="button" id="9007">
                     <description>Search</description>
                     <label>137</label>
                     <onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVSearch)</onclick>
@@ -100,7 +61,7 @@
                     <include>DefContextButtonGradient</include>
                     <align>left</align>
                 </control>
- -->                <control type="button" id="28">
+                <control type="button" id="28">
                     <description>Group</description>
                     <include>DefContextButtonGradient</include>
                     <align>left</align>
@@ -110,11 +71,9 @@
                     <include>DefContextButtonGradient</include>
                     <align>left</align>
                 </control>
-                <control type="radiobutton" id="9007">
-<!-- TF 09/2025 Change label for hiding show summary on EPG to more descriptive text. -->
-                    <description>Show Summary Control</description>
-					<label>Hide Show Summary</label>
-                    <!-- <label>31384</label> -->
+                <control type="radiobutton" id="9008">
+                    <description>Search</description>
+                    <label>31384</label>
                     <selected>Skin.HasSetting(pvr.fullepg)</selected>
                     <onclick>Skin.ToggleSetting(pvr.fullepg)</onclick>
                     <onclick>ReloadSkin()</onclick>
@@ -122,30 +81,7 @@
                     <visible>Window.IsVisible(MyPVRGuide.xml)</visible>
                     <align>left</align>
                 </control>
-<!-- TF 09/2025 Add option to select the larger or the original guide grid size. -->
-                 <control type="radiobutton" id="9008">
-                    <description>Grid View Size Control</description>
-					<label>Large Grid View</label>
-                    <selected>Skin.HasSetting(pvr.bigepg)</selected>
-                    <onclick>Skin.ToggleSetting(pvr.bigepg)</onclick>
-                    <onclick>ReloadSkin()</onclick>
-                    <include>DefContextButtonGradient</include>
-                    <visible>Window.IsVisible(MyPVRGuide.xml)</visible>
-                    <align>left</align>
-                </control>
-
-               <control type="button" id="3">
-                    <description>Sort</description>
-                    <include>DefContextButtonGradient</include>
-                    <align>left</align>
-                </control>
-                <control type="togglebutton" id="4">
-                    <description>Direction</description>
-                    <include>DefContextButtonGradient</include>
-                    <align>left</align>
-                    <label>584</label>
-                    <altlabel>585</altlabel>
-                </control>
+                <include>View_SideBlade_Sort</include>
                 <control type="radiobutton" id="6">
                     <description>Show Hidden Channels</description>
                     <label>19051</label>
@@ -167,12 +103,13 @@
                     <align>left</align>
                     <visible>Window.IsVisible(MyPVRChannels.xml)</visible>
                 </control>
-                <include>ControlButtons</include>
+                <include>View_SideBlade_NowPlaying</include>
             </control>
-        </control>
+        </include>
     </include>
 
     <include name="PVRInfoPanel">
+        
         <control type="group">
             <left>70</left>
             <width>642</width>
@@ -191,7 +128,7 @@
                     <right>10</right>
                     <bottom>10</bottom>
                     <texture colordiffuse="FF000000" border="10">diffuse/pvrinfo.png</texture>
-                    <visible>Player.HasVideo</visible>
+                    <visible>Player.HasVideo + !Skin.HasSetting(global.showvideo)</visible>
                 </control>
                 <control type="videowindow">
                     <left>10</left>
@@ -201,7 +138,7 @@
                     <animation type="WindowClose" reversible="false">
                         <effect type="zoom" center="auto" start="100" end="0" time="0" />
                     </animation>
-                    <visible>Player.HasVideo</visible>
+                    <visible>Player.HasVideo + !Skin.HasSetting(global.showvideo)</visible>
                     <aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
                 </control>
                 <control type="image">
@@ -210,10 +147,10 @@
                     <right>10</right>
                     <bottom>10</bottom>
                     <texture colordiffuse="Fallback" border="4" background="true">common/diffuse_box.png</texture>
-                    <visible>!Player.HasVideo</visible>
+                    <visible>!Player.HasVideo | Skin.HasSetting(global.showvideo)</visible>
                 </control>
                 <control type="image">
-                    <visible>!Player.HasVideo + String.IsEmpty(Listitem.EpgEventIcon) + String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Fanart)) + String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Poster))</visible>
+                    <visible>[!Player.HasVideo | Skin.HasSetting(global.showvideo)] + String.IsEmpty(Listitem.EpgEventIcon) + String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Fanart))</visible>
                     <left>70</left>
                     <top>30</top>
                     <right>70</right>
@@ -223,13 +160,13 @@
                     <fadetime>PosterFanartFadetime</fadetime>
                 </control>
                 <control type="image">
-                    <visible>!Player.HasVideo + [!String.IsEmpty(Listitem.EpgEventIcon) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Fanart)) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Poster))]</visible>
+                    <visible>[!Player.HasVideo | Skin.HasSetting(global.showvideo)] + [!String.IsEmpty(Listitem.EpgEventIcon) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Fanart))]</visible>
                     <left>10</left>
                     <top>10</top>
                     <right>10</right>
                     <bottom>10</bottom>
-                    <aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-                    <texture diffuse="diffuse/pvrinfo.png" background="true">$VAR[ChannelListEPGIconVar]</texture>
+                    <aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+                    <texture diffuse="diffuse/pvrinfo.png" background="true">$VAR[PVRThumbImage]</texture>
                     <fadetime>PosterFanartFadetime</fadetime>
                 </control>
                 <control type="image">
@@ -253,7 +190,7 @@
                     <font>MediumBold</font>
                     <textcolor>Dark1</textcolor>
                     <selectedcolor>Dark1</selectedcolor>
-                    <label>$INFO[ListItem.Title]</label>
+                    <label>$VAR[PVRInfoLabel]</label>
                 </control>
                 <control type="label">
                     <top>48</top>
@@ -282,9 +219,44 @@
                     <font>TinyPlot</font>
                     <textcolor>Dark2</textcolor>
                     <selectedcolor>Dark2</selectedcolor>
-                    <label>$VAR[PVREpisodeLabel,[B],[/B][CR]]$INFO[ListItem.Plot]</label>
+                    <label>$VAR[PVREpisodeLabel,[B],[/B][CR]]$VAR[PVRPlotLabel]</label>
                 </control>
-            </control>
+                <control type="label">
+                	<visible>Window.IsVisible(MyPVRProviders.xml)</visible>
+	                <visible>!String.IsEqual(Container.FolderPath,pvr://providers/tv/) + !String.IsEqual(Container.FolderPath,pvr://providers/radio/)</visible>
+                    <top>64</top>
+                    <height>64</height>
+                    <aligny>center</aligny>
+                    <font>Tiny</font>
+                    <textcolor>Dark1</textcolor>
+                    <selectedcolor>Dark1</selectedcolor>
+                    <label>$INFO[ListItem.Property(totalcount),, $LOCALIZE[31101]]</label>
+                </control>
+				<control type="list" id="5000">
+                	<visible>Window.IsVisible(MyPVRProviders.xml)</visible>
+	                <visible>String.IsEqual(Container.FolderPath,pvr://providers/tv/) | String.IsEqual(Container.FolderPath,pvr://providers/radio/)</visible>
+					<top>64</top>
+					<bottom>0</bottom>
+					<width>100%</width>
+					<itemlayout height="48">
+						<control type="label">
+							<font>Tiny</font>
+		                    <textcolor>Dark1</textcolor>
+							<width>100%</width>
+		                    <label>$INFO[ListItem.Property(totalcount),, ]$INFO[ListItem.Label]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout height="48">
+						<control type="label">
+							<font>Tiny</font>
+		                    <textcolor>Dark1</textcolor>
+							<width>100%</width>
+		                    <label>$INFO[ListItem.Property(totalcount),, ]$INFO[ListItem.Label]</label>
+						</control>
+					</focusedlayout>
+					<content>$INFO[ListItem.FilenameAndPath]</content>
+				</control>
+            </control>    
         </control>
     </include>
 
@@ -391,6 +363,10 @@
         <value condition="Integer.IsGreater(ListItem.Progress,0)">1</value>
     </variable>
 
+	<variable name="PVRIconColor">
+		<value condition="String.StartsWith(ListItem.Icon,Default) | String.IsEmpty(ListItem.Icon)">Light1</value>
+	</variable>
+    
     <include name="PVRView_50">
         <control type="group">
             <visible>Control.IsVisible(50)</visible>
@@ -422,7 +398,7 @@
                             <visible>ListItem.IsPlaying</visible>
                         </control>
                         <control type="image">
-                            <animation effect="slide" end="10,-12" time="0" condition="ListItem.IsRecording + Window.IsVisible(MyPVRChannels.xml)">Conditional</animation>
+                            <animation effect="slide" end="10,-12" time="0" condition="Window.IsVisible(MyPVRChannels.xml)">Conditional</animation>
                             <left>142</left>
                             <top>40</top>
                             <width>17</width>
@@ -432,14 +408,15 @@
                             <visible>ListItem.IsRecording</visible>
                         </control>
                         <control type="image">
+                            <animation effect="slide" end="10,-12" time="0" condition="Window.IsVisible(MyPVRChannels.xml)">Conditional</animation>
                             <animation effect="slide" end="30" time="0" condition="ListItem.IsRecording">Conditional</animation>
-                            <left>106</left>
-                            <top>28</top>
+                            <left>96</left>
+                            <top>40</top>
                             <width>100</width>
                             <height>100</height>
                             <aspectratio>keep</aspectratio>
                             <texture colordiffuse="$VAR[ColorHighlight]">progress/play.png</texture>
-                            <visible>ListItem.IsPlaying + Window.IsVisible(MyPVRChannels.xml)</visible>
+                            <visible>ListItem.IsPlaying</visible>
                         </control>
                         <control type="image">
                             <left>10</left>
@@ -540,14 +517,15 @@
                                 <width>32</width>
                                 <height>64</height>
                                 <font>WatchedIcon</font>
-                                <textcolor>Dark2</textcolor>
-                                <selectedcolor>Dark2</selectedcolor>
+                                <textcolor>Dark1</textcolor>
+                                <selectedcolor>Dark1</selectedcolor>
                                 <aligny>center</aligny>
                                 <align>right</align>
-                                <label>$VAR[LabelPercentWatched]</label>
+                                <label>$VAR[LabelPercentWatchedPVR]</label>
                                 <visible>!String.IsEqual(ListItem.Label,..)</visible>
                             </control>
                             <control type="label">
+                                <animation effect="slide" end="30" time="0" condition="ListItem.IsPlaying">Conditional</animation>
                                 <animation effect="slide" end="30" time="0" condition="ListItem.IsRecording">Conditional</animation>
                                 <left>140</left>
                                 <bottom>8</bottom>
@@ -571,6 +549,19 @@
                                 <label>$INFO[ListItem.ChannelName]</label>
                             </control>
                         </control>
+                        <control type="group">
+                            <visible>Window.IsVisible(MyPVRProviders.xml)</visible>
+                            <control type="label">
+                                <left>140</left>
+                                <right>100</right>
+                                <aligny>center</aligny>
+                                <height>100%</height>
+                                <font>SmallBold</font>
+                                <textcolor>Dark1</textcolor>
+                                <selectedcolor>Dark1</selectedcolor>
+                                <label>$INFO[ListItem.Label]</label>
+                            </control>
+                    	</control>
                     </itemlayout>
                     <focusedlayout height="128" width="1100">
                         <control type="group">
@@ -587,7 +578,7 @@
                                 <visible>ListItem.IsPlaying</visible>
                             </control>
                             <control type="image">
-                                <animation effect="slide" end="10,-12" time="0" condition="ListItem.IsRecording + Window.IsVisible(MyPVRChannels.xml)">Conditional</animation>
+                                <animation effect="slide" end="10,-12" time="0" condition="Window.IsVisible(MyPVRChannels.xml)">Conditional</animation>
                                 <left>142</left>
                                 <top>40</top>
                                 <width>17</width>
@@ -597,14 +588,15 @@
                                 <visible>ListItem.IsRecording</visible>
                             </control>
                             <control type="image">
+                                <animation effect="slide" end="10,-12" time="0" condition="Window.IsVisible(MyPVRChannels.xml)">Conditional</animation>
                                 <animation effect="slide" end="30" time="0" condition="ListItem.IsRecording">Conditional</animation>
-                                <left>106</left>
-                                <top>28</top>
+                                <left>96</left>
+                                <top>40</top>
                                 <width>100</width>
                                 <height>100</height>
                                 <aspectratio>keep</aspectratio>
                                 <texture colordiffuse="$VAR[ColorHighlight]">progress/play.png</texture>
-                                <visible>ListItem.IsPlaying + Window.IsVisible(MyPVRChannels.xml)</visible>
+                                <visible>ListItem.IsPlaying</visible>
                             </control>
                             <control type="image">
                                 <left>10</left>
@@ -612,7 +604,7 @@
                                 <width>111</width>
                                 <height>111</height>
                                 <aspectratio align="left">keep</aspectratio>
-                                <texture fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
+                                <texture colordiffuse="$VAR[PVRIconColor]" fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
                             </control>
                             <control type="group">
                                 <visible>Window.IsVisible(MyPVRChannels.xml)</visible>
@@ -636,8 +628,8 @@
                                     <label>$INFO[ListItem.ChannelNumberLabel,,  ]$INFO[ListItem.ChannelName]</label>
                                 </control>
                                 <control type="label">
-                                    <animation effect="slide" end="30" time="0" condition="ListItem.IsRecording">Conditional</animation>
                                     <animation effect="slide" end="30" time="0" condition="ListItem.IsPlaying">Conditional</animation>
+                                    <animation effect="slide" end="30" time="0" condition="ListItem.IsRecording">Conditional</animation>
                                     <left>150</left>
                                     <bottom>20</bottom>
                                     <right>100</right>
@@ -705,14 +697,15 @@
                                     <width>32</width>
                                     <height>64</height>
                                     <font>WatchedIcon</font>
-                                    <textcolor>Light2</textcolor>
-                                    <selectedcolor>Light2</selectedcolor>
+                                    <textcolor>Light1</textcolor>
+                                    <selectedcolor>Light1</selectedcolor>
                                     <aligny>center</aligny>
                                     <align>right</align>
-                                    <label>$VAR[LabelPercentWatched]</label>
+                                    <label>$VAR[LabelPercentWatchedPVR]</label>
                                     <visible>!String.IsEqual(ListItem.Label,..)</visible>
                                 </control>
                                 <control type="label">
+                                    <animation effect="slide" end="30" time="0" condition="ListItem.IsPlaying">Conditional</animation>
 	                                <animation effect="slide" end="30" time="0" condition="ListItem.IsRecording">Conditional</animation>
                                     <left>140</left>
                                     <bottom>8</bottom>
@@ -737,14 +730,25 @@
                                 </control>
                             </control>
                         </control>
+                        <control type="group">
+                            <visible>Window.IsVisible(MyPVRProviders.xml)</visible>
+                            <control type="label">
+                                <left>140</left>
+                                <right>100</right>
+                                <aligny>center</aligny>
+                                <height>100%</height>
+                                <font>SmallBold</font>
+                                <textcolor>Light1</textcolor>
+                                <selectedcolor>Light1</selectedcolor>
+                                <label>$INFO[ListItem.Label]</label>
+                            </control>
+                    	</control>
                     </focusedlayout>
                 </control>
             </control>
-            <control type="scrollbar" id="1633">
-                <include content="scrollbar_vertical">
-                    <param name="scrollid" value="1633"/>
-                </include>
-            </control>
+            <include content="Furniture_Scrollbar">
+                <param name="id" value="1633" />
+            </include>
             <include>PVRInfoPanel</include>
         </control>
     </include>
@@ -779,7 +783,7 @@
                             <visible>ListItem.IsPlaying</visible>
                         </control>
                         <control type="image">
-                            <animation effect="slide" end="10,-12" time="0" condition="ListItem.IsRecording + Window.IsVisible(MyPVRChannels.xml)">Conditional</animation>
+                            <animation effect="slide" end="10,-12" time="0" condition="Window.IsVisible(MyPVRChannels.xml)">Conditional</animation>
                             <left>142</left>
                             <top>40</top>
                             <width>17</width>
@@ -789,9 +793,10 @@
                             <visible>ListItem.IsRecording</visible>
                         </control>
                         <control type="image">
+                            <animation effect="slide" end="10,-12" time="0" condition="Window.IsVisible(MyPVRChannels.xml)">Conditional</animation>
                             <animation effect="slide" end="30" time="0" condition="ListItem.IsRecording">Conditional</animation>
-                            <left>106</left>
-                            <top>28</top>
+                            <left>96</left>
+                            <top>40</top>
                             <width>100</width>
                             <height>100</height>
                             <aspectratio>keep</aspectratio>
@@ -897,14 +902,15 @@
                                 <width>32</width>
                                 <height>64</height>
                                 <font>WatchedIcon</font>
-                                <textcolor>Dark2</textcolor>
-                                <selectedcolor>Dark2</selectedcolor>
+                                <textcolor>Dark1</textcolor>
+                                <selectedcolor>Dark1</selectedcolor>
                                 <aligny>center</aligny>
                                 <align>right</align>
-                                <label>$VAR[LabelPercentWatched]</label>
+                                <label>$VAR[LabelPercentWatchedPVR]</label>
                                 <visible>!String.IsEqual(ListItem.Label,..)</visible>
                             </control>
                             <control type="label">
+                                <animation effect="slide" end="30" time="0" condition="ListItem.IsPlaying">Conditional</animation>
                                 <animation effect="slide" end="30" time="0" condition="ListItem.IsRecording">Conditional</animation>
                                 <left>140</left>
                                 <bottom>8</bottom>
@@ -928,6 +934,19 @@
                                 <label>$INFO[ListItem.ChannelName]</label>
                             </control>
                         </control>
+                       	<control type="group">
+                            <visible>Window.IsVisible(MyPVRProviders.xml)</visible>
+                            <control type="label">
+                                <left>140</left>
+                                <right>100</right>
+                                <aligny>center</aligny>
+                                <height>100%</height>
+                                <font>SmallBold</font>
+                                <textcolor>Dark1</textcolor>
+                                <selectedcolor>Dark1</selectedcolor>
+                                <label>$INFO[ListItem.Label]</label>
+                            </control>
+                   		</control>
                     </itemlayout>
                     <focusedlayout height="128">
                         <control type="group">
@@ -944,7 +963,7 @@
                                 <visible>ListItem.IsPlaying</visible>
                             </control>
                             <control type="image">
-                                <animation effect="slide" end="10,-12" time="0" condition="ListItem.IsRecording + Window.IsVisible(MyPVRChannels.xml)">Conditional</animation>
+                                <animation effect="slide" end="10,-12" time="0" condition="Window.IsVisible(MyPVRChannels.xml)">Conditional</animation>
                                 <left>142</left>
                                 <top>40</top>
                                 <width>17</width>
@@ -954,9 +973,10 @@
                                 <visible>ListItem.IsRecording</visible>
                             </control>
                             <control type="image">
+                                <animation effect="slide" end="10,-12" time="0" condition="Window.IsVisible(MyPVRChannels.xml)">Conditional</animation>
                                 <animation effect="slide" end="30" time="0" condition="ListItem.IsRecording">Conditional</animation>
-                                <left>106</left>
-                                <top>28</top>
+                                <left>96</left>
+                                <top>40</top>
                                 <width>100</width>
                                 <height>100</height>
                                 <aspectratio>keep</aspectratio>
@@ -969,7 +989,7 @@
                                 <width>111</width>
                                 <height>111</height>
                                 <aspectratio align="left">keep</aspectratio>
-                                <texture fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
+                                <texture colordiffuse="$VAR[PVRIconColor]" fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
                             </control>
                             <control type="group">
                                 <visible>Window.IsVisible(MyPVRChannels.xml)</visible>
@@ -993,8 +1013,8 @@
                                     <label>$INFO[ListItem.ChannelNumberLabel,,  ]$INFO[ListItem.ChannelName]</label>
                                 </control>
                                 <control type="label">
-                                    <animation effect="slide" end="30" time="0" condition="ListItem.IsRecording">Conditional</animation>
                                     <animation effect="slide" end="30" time="0" condition="ListItem.IsPlaying">Conditional</animation>
+                                    <animation effect="slide" end="30" time="0" condition="ListItem.IsRecording">Conditional</animation>
                                     <left>150</left>
                                     <bottom>20</bottom>
                                     <right>100</right>
@@ -1062,14 +1082,15 @@
                                     <width>32</width>
                                     <height>64</height>
                                     <font>WatchedIcon</font>
-                                    <textcolor>Light2</textcolor>
-                                    <selectedcolor>Light2</selectedcolor>
+                                    <textcolor>Light1</textcolor>
+                                    <selectedcolor>Light1</selectedcolor>
                                     <aligny>center</aligny>
                                     <align>right</align>
-                                    <label>$VAR[LabelPercentWatched]</label>
+                                    <label>$VAR[LabelPercentWatchedPVR]</label>
                                     <visible>!String.IsEqual(ListItem.Label,..)</visible>
                                 </control>
                                 <control type="label">
+                                    <animation effect="slide" end="30" time="0" condition="ListItem.IsPlaying">Conditional</animation>
                                     <animation effect="slide" end="30" time="0" condition="ListItem.IsRecording">Conditional</animation>
                                     <left>140</left>
                                     <bottom>8</bottom>
@@ -1094,14 +1115,25 @@
                                 </control>
                             </control>
                         </control>
+                       	<control type="group">
+                            <visible>Window.IsVisible(MyPVRProviders.xml)</visible>
+                            <control type="label">
+                                <left>140</left>
+                                <right>100</right>
+                                <aligny>center</aligny>
+                                <height>100%</height>
+                                <font>SmallBold</font>
+                                <textcolor>Light1</textcolor>
+                                <selectedcolor>Light1</selectedcolor>
+                                <label>$INFO[ListItem.Label]</label>
+                            </control>
+                   		</control>
                     </focusedlayout>
                 </control>
             </control>
-            <control type="scrollbar" id="1701">
-                <include content="scrollbar_vertical">
-                    <param name="scrollid" value="1701"/>
-                </include>
-            </control>
+            <include content="Furniture_Scrollbar">
+                <param name="id" value="1701" />
+            </include>
         </control>
     </include>    
 
@@ -1297,7 +1329,7 @@
                                 <width>220</width>
                                 <height>220</height>
                                 <aspectratio align="left" aligny="top">keep</aspectratio>
-                                <texture fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
+                                <texture colordiffuse="$VAR[PVRIconColor]" fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
                             </control>
                             <control type="label">
                                 <left>290</left>
@@ -1378,7 +1410,7 @@
                                 <width>270</width>
                                 <height>270</height>
                                 <aspectratio>keep</aspectratio>
-                                <texture fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
+                                <texture colordiffuse="$VAR[PVRIconColor]" fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
                             </control>
                             <control type="label">
                                 <left>330</left>
@@ -1439,11 +1471,9 @@
                     </focusedlayout>
                 </control>
             </control>
-            <control type="scrollbar" id="1632">
-                <include content="scrollbar_vertical">
-                    <param name="scrollid" value="1632"/>
-                </include>
-            </control>
+            <include content="Furniture_Scrollbar">
+                <param name="id" value="1632" />
+            </include>
         </control>
     </include>
 
@@ -1619,11 +1649,9 @@
                 </control>
 	            <include>PVRGuideChannelDetails</include>
 	        </control>    
-            <control type="scrollbar" id="1631">
-                <include content="scrollbar_vertical">
-                    <param name="scrollid" value="1631"/>
-                </include>
-            </control>
+            <include content="Furniture_Scrollbar">
+                <param name="id" value="1631" />
+            </include>
         </control>
     </include>
 
@@ -1651,8 +1679,8 @@
                     <onup>54</onup>
                     <ondown>54</ondown>
                     <onleft condition="!Skin.HasSetting(global.kioskmode)">28</onleft>
-                    <onright>1633</onright>
-                    <pagecontrol>1633</pagecontrol>
+                    <onright>1634</onright>
+                    <pagecontrol>1634</pagecontrol>
                     <viewtype label="31292">list</viewtype>
                     <scrolltime>200</scrolltime>
                     <orientation>vertical</orientation>
@@ -1889,11 +1917,9 @@
                     </focusedlayout>
                 </control>
             </control>
-            <control type="scrollbar" id="1633">
-                <include content="scrollbar_vertical">
-                    <param name="scrollid" value="1633"/>
-                </include>
-            </control>
+             <include content="Furniture_Scrollbar">
+                <param name="id" value="1634" />
+            </include>
             <control type="image">
                 <right>SidePad</right>
                 <top>206</top>
@@ -1907,19 +1933,15 @@
     </include>
 
 	<include name="PVRGuideChannelDetails">
-<!-- TF Adjust size and elements for the selected program summary -->
-		<param name="height" default="150" />
-<!--		<param name="top" default="10" /> -->
+		<param name="top" default="10" />
 		<param name="bottom" default="10" />
 		<param name="visible" default="true" />		
 		<definition>
 	        <control type="group">
-	            <height>$PARAM[height]</height>
-<!--	            <top>$PARAM[top]</top> -->
+	            <top>$PARAM[top]</top>
 	            <bottom>$PARAM[bottom]</bottom>
 	            <left>30</left>
-	            <right>0</right>
-<!--	            <right>30</right> -->
+	            <right>30</right>
 	            <visible>$PARAM[visible]</visible>
 	            <control type="group">
 	                <orientation>horizontal</orientation>
@@ -1932,27 +1954,37 @@
 	                    <font>SmallBold</font>
 	                    <textcolor>PanelWhite100</textcolor>
 	                    <selectedcolor>PanelWhite100</selectedcolor>
-                        <label>[COLOR=$VAR[ColorHighlight]]$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ,][/COLOR]$INFO[ListItem.Title,  ,]$VAR[PVRGenreLabel]</label>
+                        <label>[COLOR=$VAR[ColorHighlight]]$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ,][/COLOR]$INFO[ListItem.Title,  ,]$VAR[PVREpisodeNumberLabel]        [COLOR=$VAR[ColorHighlight]]$LOCALIZE[515][/COLOR]$INFO[ListItem.Genre,  ,]</label>
 	                </control>
 	            </control>
-<!-- TF 01/2026 Episode and show plot formatting in the textbox. -->
 	            <control type="textbox">
-	                <top>50</top>
-	                <right>250</right>
-	                <height>120</height>
-	                <align>left</align>
-	                <font>Tiny24</font>
+	                <top>59</top>
+	                <right>240</right>
+	                <height>75</height>
+	                <align>justify</align>
+	                <font>TinyPlot</font>
 	                <textcolor>PanelWhite70</textcolor>
 	                <selectedcolor>PanelWhite70</selectedcolor>
-	                <label>[B][I]$VAR[PVREpisodeLabel][/I][/B][CR]$INFO[ListItem.Plot]</label>
+	                <label>$VAR[PVREpisodeLabel,,[CR]]$VAR[PVRPlotLabel]</label>
 	            </control>
+                <control type="image">
+                    <visible>String.IsEmpty(Listitem.EpgEventIcon) + String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Fanart))</visible>
+                    <right>-15</right>
+                    <top>10</top>
+                    <width>240</width>
+                    <bottom>10</bottom>
+                    <aspectratio align="center" aligny="center">keep</aspectratio>
+                    <texture>$INFO[ListItem.Icon]</texture>
+                    <fadetime>PosterFanartFadetime</fadetime>
+                </control>
 	            <control type="image">
-	                <right>20</right>
-	                <top>35</top>
-	                <width>180</width>
-	                <!-- <bottom>20</bottom> -->
-	                <aspectratio align="center" aligny="center">keep</aspectratio>
-	                <texture>$VAR[ChannelListEPGIconVar]</texture>
+                    <visible>!String.IsEmpty(Listitem.EpgEventIcon) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Fanart))</visible>
+	                <right>-15</right>
+	                <top>10</top>
+	                <width>240</width>
+	                <bottom>10</bottom>
+	                <aspectratio align="center" aligny="center">scale</aspectratio>
+	                <texture>$VAR[PVRThumbImage]</texture>
 	                <fadetime>PosterFanartFadetime</fadetime>
 	            </control>
 	        </control>		

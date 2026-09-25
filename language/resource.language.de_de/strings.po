@@ -17,9 +17,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.15.2\n"
 
-msgctxt "#31000"
-msgid "Limit number of items in widget"
-msgstr "Anzahl der Einträge im Widget begrenzen"
+msgctxt "#31001"
+msgid "Prefer landscape art"
+msgstr "Hintergründe im Landschaftsformat bevorzugen"
 
 msgctxt "#31002"
 msgid "Animated posters"
@@ -28,14 +28,6 @@ msgstr "Animierte Poster"
 msgctxt "#31003"
 msgid "Animated fanarts"
 msgstr "Animierte Fanarts"
-
-msgctxt "#31004"
-msgid "Show discart (fanart views)"
-msgstr "Disc-Art (Fanart-Ansichten) anzeigen"
-
-msgctxt "#31005"
-msgid "Alternate case (fanart views)"
-msgstr "Alternative Hülle (Fanart-Ansichten)"
 
 msgctxt "#31007"
 msgid "Title-overlays (symbols-view, deprecated)"
@@ -49,10 +41,6 @@ msgctxt "#31009"
 msgid "Scroll entire page"
 msgstr "Gesamte Seite scrollen"
 
-msgctxt "#31010"
-msgid "Alternate case"
-msgstr "Alternative Hülle"
-
 msgctxt "#31011"
 msgid "Show CD and case"
 msgstr "CD und Hülle anzeigen"
@@ -65,12 +53,16 @@ msgctxt "#31014"
 msgid "Netflix"
 msgstr "Netflix"
 
+msgctxt "#31015"
+msgid "Order"
+msgstr "Reihenfolge"
+
 msgctxt "#31017"
-msgid "Colored icon media flags"
+msgid "Coloured icon media flags"
 msgstr "Farbige Medien-Informationen-Symbole"
 
 msgctxt "#31019"
-msgid "Supported Addons"
+msgid "Supported add-ons"
 msgstr "Unterstützte Addons"
 
 msgctxt "#31020"
@@ -182,7 +174,7 @@ msgid "Movie Sets"
 msgstr "Filmreihen"
 
 msgctxt "#31053"
-msgid "New Tv Shows"
+msgid "New TV Shows"
 msgstr "Neue Serien"
 
 msgctxt "#31054"
@@ -190,11 +182,11 @@ msgid "Recently Watched TV Shows"
 msgstr "Zuletzt angesehene Serien"
 
 msgctxt "#31056"
-msgid "Random Tv Shows"
+msgid "Random TV Shows"
 msgstr "Zufällige Serien"
 
 msgctxt "#31057"
-msgid "Top Rated Tv Shows"
+msgid "Top Rated TV Shows"
 msgstr "Top bewertete Serien"
 
 msgctxt "#31058"
@@ -241,6 +233,14 @@ msgctxt "#31068"
 msgid "Random Artists"
 msgstr "Zufällige Interpreten"
 
+msgctxt "#31069"
+msgid "Next Up"
+msgstr "Als nächstes"
+
+msgctxt "#31070"
+msgid "Recent Episodes Grouped"
+msgstr "Gruppierte neue Episoden"
+
 msgctxt "#31071"
 msgid "Show fanart/landscape view"
 msgstr "Fanart/Landscape-Ansicht"
@@ -261,10 +261,6 @@ msgctxt "#31076"
 msgid "This view"
 msgstr "Diese Ansicht"
 
-msgctxt "#31077"
-msgid "Misc"
-msgstr "Verschiedenes"
-
 msgctxt "#31078"
 msgid "Global options"
 msgstr "Globale Optionen"
@@ -272,6 +268,10 @@ msgstr "Globale Optionen"
 msgctxt "#31079"
 msgid "Show discart"
 msgstr "Disc-Art anzeigen"
+
+msgctxt "#31080"
+msgid "Fullsize fanart"
+msgstr "Volle Größe der Fanarts"
 
 msgctxt "#31081"
 msgid "Double-Flix"
@@ -446,8 +446,28 @@ msgid "Set your favourite settings"
 msgstr "Favorisierte Einstellungen setzen"
 
 msgctxt "#31126"
-msgid "Accent colors"
+msgid "Accent colours"
 msgstr "Akzentfarben"
+
+msgctxt "#31127"
+msgid "Video sources"
+msgstr "Videoquellen"
+
+msgctxt "#31128"
+msgid "Music sources"
+msgstr "Musikquellen"
+
+msgctxt "#31129"
+msgid "Picture sources"
+msgstr "Bildquellen"
+
+msgctxt "#31130"
+msgid "File sources"
+msgstr "Dateiquellen"
+
+msgctxt "#31131"
+msgid "item"
+msgstr "Eintrag"
 
 msgctxt "#31133"
 msgid "Hide watched"
@@ -522,12 +542,16 @@ msgid "Show clock"
 msgstr "Uhr anzeigen"
 
 msgctxt "#31154"
-msgid "Show media flags"
-msgstr "Medien-Informationen anzeigen"
+msgid "Show media flags in footer"
+msgstr "Medien-Informationen in der Fußzeile anzeigen"
 
 msgctxt "#31155"
 msgid "Show now playing info"
 msgstr "Gerade läuft-Informationen anzeigen"
+
+msgctxt "#31156"
+msgid "No bookmarks created yet."
+msgstr "Es wurden noch keine Lesezeichen angelegt."
 
 msgctxt "#31157"
 msgid "Extended info of"
@@ -542,7 +566,7 @@ msgid "Movies by"
 msgstr "Filme von"
 
 msgctxt "#31160"
-msgid "Tv Shows by"
+msgid "TV Shows by"
 msgstr "Serien von"
 
 msgctxt "#31161"
@@ -657,10 +681,6 @@ msgctxt "#31189"
 msgid "Discography of"
 msgstr "Diskografie von"
 
-msgctxt "#31190"
-msgid "Show icons"
-msgstr "Symbole anzeigen"
-
 msgctxt "#31191"
 msgid "Directed by"
 msgstr "Regisseur"
@@ -710,8 +730,8 @@ msgid "Use horizontal submenu"
 msgstr "Horizontales Untermenü verwenden"
 
 msgctxt "#31203"
-msgid "Artwork Beef"
-msgstr "Artwork Beef"
+msgid "Media Details"
+msgstr "Mediendetails"
 
 msgctxt "#31204"
 msgid "Similar to"
@@ -837,10 +857,6 @@ msgctxt "#31234"
 msgid "Fanart overlay"
 msgstr "Fanart-Überlagerung"
 
-msgctxt "#31235"
-msgid "Show banner?"
-msgstr "Banner anzeigen?"
-
 msgctxt "#31236"
 msgid "Now playing..."
 msgstr "Gerade läuft..."
@@ -850,11 +866,11 @@ msgid "Use minimal busy loader in header"
 msgstr "Beschäftigt-Indikator in der Überschrift verwenden"
 
 msgctxt "#31238"
-msgid "Select highlight color"
+msgid "Select highlight colour"
 msgstr "Akzentfarbe auswählen"
 
 msgctxt "#31239"
-msgid "Current Color"
+msgid "Current Colour"
 msgstr "Aktuelle Farbe"
 
 msgctxt "#31240"
@@ -1082,7 +1098,7 @@ msgid "Show plot on HUB"
 msgstr "Zeige Handlung im HUB"
 
 msgctxt "#31300"
-msgid "Colors"
+msgid "Colours"
 msgstr "Farben"
 
 msgctxt "#31301"
@@ -1166,7 +1182,7 @@ msgid "New Unwatched Episodes"
 msgstr "Neue ungesehene Episoden"
 
 msgctxt "#31323"
-msgid "New Unwatched Tv Shows"
+msgid "New Unwatched TV Shows"
 msgstr "Neue ungesehene Serien"
 
 msgctxt "#31324"
@@ -1221,21 +1237,21 @@ msgctxt "#31338"
 msgid "25"
 msgstr "25"
 
+msgctxt "#31339"
+msgid "Reset all menus and widgets to defaults"
+msgstr "Alle Menüs und Widgets zurücksetzen"
+
 msgctxt "#31340"
-msgid "Auto-scrolling"
+msgid "Autoscroll"
 msgstr "Automatisches Scrollen"
 
 msgctxt "#31341"
-msgid "Widget-listtype"
-msgstr "Widget-Listentyp"
+msgid "Recommended Movies"
+msgstr "Empfohlene Filme"
 
 msgctxt "#31342"
-msgid "List"
-msgstr "Liste"
-
-msgctxt "#31343"
-msgid "Fixed list"
-msgstr "Fixierte Liste"
+msgid "Recommended TV Shows"
+msgstr "Empfohlene Serien"
 
 msgctxt "#31347"
 msgid "Weather Icons"
@@ -1279,19 +1295,19 @@ msgstr "Überblendzeit"
 
 msgctxt "#31359"
 msgid "Customise power menu"
-msgstr "Powermenu anpassen"
+msgstr "Power-Menü anpassen"
 
 msgctxt "#31360"
 msgid "Log off: $INFO[system.profilename]"
 msgstr "Abmelden: $INFO[system.profilename]"
 
 msgctxt "#31361"
-msgid "Delete/Disable Settings Menu Item?"
-msgstr "Einstellungen-Menüeintrag löschen/deaktivieren?"
+msgid "Customise Widgets"
+msgstr "Widgets anpassen"
 
 msgctxt "#31362"
-msgid "Are you sure you want to remove the Settings menu item?[CR]Please ensure that you have an alternative method of accessing Settings before you remove this menu item."
-msgstr "Ganz sicher, dass der Einstellungen-Menüeintrag entfernt werden soll?[CR]Es sollte sichergestellt sein, dass eine alternative Zugriffsmethode auf die Einstellungen vorhanden ist, bevor fortgefahren wird."
+msgid "Customise Hub Menu"
+msgstr "Hub-Menü anpassen"
 
 msgctxt "#31363"
 msgid "Power menu"
@@ -1312,6 +1328,10 @@ msgstr "Zeige Dateinamen"
 msgctxt "#31369"
 msgid "Shifted ClearArt"
 msgstr "Verschobenes Clear-Art"
+
+msgctxt "#31368"
+msgid "Show unwatched episodes count"
+msgstr "Anzahl ungesehener Episoden anzeigen"
 
 msgctxt "#31370"
 msgid "Year of release"
@@ -1381,20 +1401,12 @@ msgctxt "#31391"
 msgid "Prefer tags instead of rating"
 msgstr "Bevorzuge Tags anstatt Bewertung"
 
-msgctxt "#31392"
-msgid "Limit number of items in hub"
-msgstr "Anzahl der Einträge im Hub begrenzen"
-
-msgctxt "#31393"
-msgid "Show icons only"
-msgstr "Nur Symbole anzeigen"
-
 msgctxt "#31394"
 msgid "Multi-Widgets"
 msgstr "Multi-Widgets"
 
 msgctxt "#31395"
-msgid "Gradient color for "
+msgid "Gradient colour for "
 msgstr "Farbverlauf für "
 
 msgctxt "#31396"
@@ -1413,14 +1425,6 @@ msgctxt "#31401"
 msgid "Aspect ratio"
 msgstr "Seitenverhältnis"
 
-msgctxt "#31402"
-msgid "Select aspect ratio for square widget"
-msgstr "Seitenverhältnis für quadratisches Widget"
-
-msgctxt "#31403"
-msgid "Scale"
-msgstr "Skalieren"
-
 msgctxt "#31404"
 msgid "Sunrise at"
 msgstr "Sonnenaufgang um"
@@ -1430,12 +1434,20 @@ msgid "Sunset at"
 msgstr "Sonnenuntergang um"
 
 msgctxt "#31406"
-msgid "Square small"
-msgstr "Quadrat klein"
+msgid "Menu bar style"
+msgstr "Stil der Menüleiste"
 
 msgctxt "#31407"
-msgid "Square medium"
-msgstr "Quadrat mittel"
+msgid "Text"
+msgstr "Text"
+
+msgctxt "#31408"
+msgid "Icons + Text"
+msgstr "Symbole + Text"
+
+msgctxt "#31409"
+msgid "Icons"
+msgstr "Symbole"
 
 msgctxt "#31410"
 msgid "Home menu bar"
@@ -1452,26 +1464,6 @@ msgstr " - Vollbild"
 msgctxt "#31413"
 msgid "Weather location"
 msgstr "Wetter-Standort"
-
-msgctxt "#31414"
-msgid "Widget 1"
-msgstr "Widget 1"
-
-msgctxt "#31415"
-msgid "Widget 2"
-msgstr "Widget 2"
-
-msgctxt "#31416"
-msgid "Widget 3"
-msgstr "Widget 3"
-
-msgctxt "#31417"
-msgid "Widget 4"
-msgstr "Widget 4"
-
-msgctxt "#31418"
-msgid "Widget 5"
-msgstr "Widget 5"
 
 msgctxt "#31421"
 msgid "Images"
@@ -1494,12 +1486,12 @@ msgid "Seconds"
 msgstr "Sekunden"
 
 msgctxt "#31429"
-msgid "more..."
-msgstr "mehr..."
+msgid "Show more..."
+msgstr "Zeige mehr..."
 
 msgctxt "#31430"
-msgid "item"
-msgstr "Eintrag"
+msgid "Limited widgets have \"more items\" object"
+msgstr "Begrenzte Widgets haben den zusätzlichen Eintrag \"Zeige mehr\""
 
 msgctxt "#31431"
 msgid "Use old Arctic Zephyr window animation"
@@ -1526,8 +1518,8 @@ msgid "Most played Songs"
 msgstr "Meist gespielte Titel"
 
 msgctxt "#31437"
-msgid "Use old jumpbar (requires script.embuary.helper)"
-msgstr "Alte Jumpbar benutzen (erfordert script.embuary.helper)"
+msgid "Use Skin Info Service alphabet scrollbar"
+msgstr "Alphabetische Scrollleiste des Skin Info Service verwenden"
 
 msgctxt "#31438"
 msgid "Genre Poster"
@@ -1568,14 +1560,6 @@ msgstr "Nächste Episode abspielen"
 msgctxt "#31452"
 msgid "Widget"
 msgstr "Widget"
-
-msgctxt "#31453"
-msgid "Edge distance"
-msgstr "Abstand der Kanten"
-
-msgctxt "#31454"
-msgid "30px"
-msgstr "30px"
 
 msgctxt "#31455"
 msgid "Path intros"
@@ -1630,16 +1614,12 @@ msgid "disabled"
 msgstr "deaktiviert"
 
 msgctxt "#31468"
-msgid "Required addons"
+msgid "Required add-ons"
 msgstr "Erforderliche Addons"
 
 msgctxt "#31469"
-msgid "Recommended addons"
+msgid "Recommended add-ons"
 msgstr "Empfohlene Addons"
-
-msgctxt "#31472"
-msgid "CoreELEC Settings"
-msgstr "CoreELEC-Einstellungen"
 
 msgctxt "#31473"
 msgid "Custom widget"
@@ -1658,12 +1638,16 @@ msgid "Boxed Set"
 msgstr "Filmreihe"
 
 msgctxt "#31477"
-msgid "Widget 6"
-msgstr "Widget 6"
+msgid "Select icon"
+msgstr "Symbol auswählen"
 
 msgctxt "#31478"
 msgid "Indicators"
 msgstr "Indikatoren"
+
+msgctxt "#31479"
+msgid "Content type"
+msgstr "Inhaltstyp"
 
 msgctxt "#31480"
 msgid "HDR"
@@ -1697,9 +1681,21 @@ msgctxt "#31487"
 msgid "CPU"
 msgstr "CPU"
 
+msgctxt "#31488"
+msgid "Awards"
+msgstr "Auszeichnungen"
+
 msgctxt "#31489"
-msgid "Underlined homemenu items"
+msgid "Underlined home menu items"
 msgstr "Unterstrichene Einträge"
+
+msgctxt "#31490"
+msgid "MDBList"
+msgstr ""
+
+msgctxt "#31491"
+msgid "Letterboxd"
+msgstr ""
 
 msgctxt "#31492"
 msgid "Paused"
@@ -1732,6 +1728,10 @@ msgstr "Filmreihe"
 msgctxt "#31500"
 msgid "Prefer percentage"
 msgstr "Prozent bevorzugen"
+
+msgctxt "#31501"
+msgid "[B]Manage Files[/B][CR][CR] •     Copy[CR] •     Move[CR] •     Delete[CR] •     Rename[CR] •     Manage Source"
+msgstr "[B]Dateien verwalten[/B][CR][CR] •     Kopieren[CR] •     Verschieben[CR] •     Löschen[CR] •     Umbenennen[CR] •     Dateiquellen verwalten"
 
 msgctxt "#31502"
 msgid "On back, widgets do not return to initial position"
@@ -1773,6 +1773,10 @@ msgctxt "#31513"
 msgid "Override play function with TMDB helper play function"
 msgstr "Überschreibe die Wiedergabefunktion mit der TMDB-Helfer-Wiedergabefunktion"
 
+msgctxt "#31514"
+msgid "Skin Playlists"
+msgstr "Skin-Wiedergabelisten"
+
 msgctxt "#31516"
 msgid "Last Played Radio Channels"
 msgstr "Zuletzt abgespielte Radio-Kanäle"
@@ -1782,7 +1786,7 @@ msgid "Mini-EPG (vertical, only 5 Items)"
 msgstr "Mini-EPG (vertikal, nur 5 Einträge)"
 
 msgctxt "#31518"
-msgid "Unwatched Tv Shows"
+msgid "Unwatched TV Shows"
 msgstr "Ungesehene Serien"
 
 msgctxt "#31520"
@@ -1937,10 +1941,6 @@ msgctxt "#31623"
 msgid "If home menu is focused, jump to widgets on back"
 msgstr "Bei fokussiertem Hauptmenü, bei zurück zu den Widgets springen"
 
-msgctxt "#31625"
-msgid "Disable addons fanart"
-msgstr "Addons-Fanart deaktivieren"
-
 msgctxt "#31630"
 msgid "Hub widget content type"
 msgstr "Hub-Widget-Inhaltstyp"
@@ -1952,10 +1952,6 @@ msgstr "Wiedergabeaktion wenn der Video-Infodialog geöffnet ist"
 msgctxt "#31632"
 msgid "Stop playback when item is no longer focused"
 msgstr "Wiedergabe stoppen wenn der Eintrag nicht mehr fokussiert ist"
-
-msgctxt "#31643"
-msgid "LibreELEC Settings"
-msgstr "LibreELEC Einstellungen"
 
 msgctxt "#31650"
 msgid "Is playing"
@@ -1976,10 +1972,6 @@ msgstr "Gerade läuft"
 msgctxt "#31663"
 msgid "Now playing..."
 msgstr "Läuft gerade..."
-
-msgctxt "#31667"
-msgid "Animated artwork"
-msgstr "Animiertes Artwork"
 
 msgctxt "#31668"
 msgid "Path to additional animated posters"
@@ -2003,19 +1995,23 @@ msgstr "Clear-Art anzeigen"
 
 msgctxt "#31676"
 msgid "Ratings"
-msgstr ""
+msgstr "Bewertungen"
 
 msgctxt "#31677"
 msgid "Show detailed info when video starts (in seconds)"
 msgstr "Detaillierte Informationen anzeigen, wenn das Video startet (in Sekunden)"
 
 msgctxt "#31679"
-msgid "Color presets"
+msgid "Colour presets"
 msgstr "Voreinstellungen für Farben"
 
 msgctxt "#31680"
-msgid "Preset"
-msgstr "Voreinstellung"
+msgid "Skin colour theme"
+msgstr "Skin-Farbthema"
+
+msgctxt "#31681"
+msgid "Auto day and night mode"
+msgstr "Automatischer Tages- und Nachtmodus"
 
 msgctxt "#31689"
 msgid "Hide PVR recording dialog"
@@ -2037,29 +2033,25 @@ msgctxt "#31693"
 msgid "Online"
 msgstr ""
 
-msgctxt "#31694"
-msgid "Game studio/flag icons"
-msgstr "Spielestudio-Symbole"
-
 msgctxt "#31699"
-msgid "Pick a color..."
+msgid "Pick a colour..."
 msgstr "Farbe auswählen ..."
 
 msgctxt "#31700"
-msgid "Set color"
+msgid "Set colour"
 msgstr ""
+
+msgctxt "#31702"
+msgid "Use thumb for episodes background"
+msgstr "Vorschaubild als Hintergrund für Episoden verwenden"
 
 msgctxt "#31703"
 msgid "Small landscape"
-msgstr ""
+msgstr "Landscape klein"
 
 msgctxt "#31704"
-msgid "Small fanart"
-msgstr ""
-
-msgctxt "#31705"
-msgid "Small poster fanart"
-msgstr ""
+msgid "Small poster landscape"
+msgstr "Landscape klein mit Poster"
 
 msgctxt "#31707"
 msgid "Rating stars"
@@ -2074,8 +2066,8 @@ msgid "Wikipedia"
 msgstr ""
 
 msgctxt "#31712"
-msgid "Ratings"
-msgstr "Bewertungen"
+msgid "Additional ratings"
+msgstr "Zusätzliche Bewertungen"
 
 msgctxt "#31713"
 msgid "Additional rating for movies 1"
@@ -2125,6 +2117,18 @@ msgctxt "#31820"
 msgid "Prevent reload"
 msgstr "Neuladen verhindern"
 
+msgctxt "#31821"
+msgid "Auto-fit to width"
+msgstr "Automatisch an Breite anpassen"
+
+msgctxt "#31822"
+msgid "Limit"
+msgstr "Limit"
+
+msgctxt "#31823"
+msgid "Autoscroll time interval"
+msgstr "Zeitintervall für automatisches Scrollen"
+
 msgctxt "#31900"
 msgid "OSD position"
 msgstr "Position des OSD"
@@ -2140,6 +2144,22 @@ msgstr "Bewölkung"
 msgctxt "#31905"
 msgid "Nodes"
 msgstr "Knoten"
+
+msgctxt "#31906"
+msgid "Autohide seekbar after pausing"
+msgstr "Beim Pausieren Suchleiste automatisch ausblenden"
+
+msgctxt "#31907"
+msgid "Playback Speed"
+msgstr "Wiedergabegeschwindigkeit"
+
+msgctxt "#31936"
+msgid "Unknown"
+msgstr "Unbekannt"
+
+msgctxt "#31937"
+msgid "Do not show subtitles"
+msgstr "Keine Untertitel anzeigen"
 
 msgctxt "#31939"
 msgid "Ended"
@@ -2167,11 +2187,11 @@ msgstr "Veröffentlicht"
 
 msgctxt "#31945"
 msgid "Canceled"
-msgstr "Abgebrochen"
+msgstr "Eingestellt"
 
 msgctxt "#31946"
 msgid "Returning Series"
-msgstr "Wiederkehrende Serie"
+msgstr "Wiederkehrend"
 
 msgctxt "#31947"
 msgid "Acting"
@@ -2205,21 +2225,9 @@ msgctxt "#31954"
 msgid "Purple"
 msgstr "Violett"
 
-msgctxt "#31955"
-msgid "Blue"
-msgstr "Blau"
-
-msgctxt "#31956"
-msgid "Green"
-msgstr "Grün"
-
 msgctxt "#31957"
 msgid "Pink"
 msgstr "Rosa"
-
-msgctxt "#31958"
-msgid "Orange"
-msgstr "Orange"
 
 msgctxt "#31959"
 msgid "Slate"
@@ -2246,15 +2254,15 @@ msgid "Simple Gray"
 msgstr "Schlichtes Grau"
 
 msgctxt "#31965"
-msgid "Highlight color"
+msgid "Highlight colour"
 msgstr "Akzentfarbe"
 
 msgctxt "#31966"
-msgid "Gradient color"
+msgid "Gradient colour"
 msgstr "Verlaufsfarbe"
 
 msgctxt "#31967"
-msgid "Customise color settings"
+msgid "Customise colour settings"
 msgstr "Farbeinstellungen anpassen"
 
 msgctxt "#31968"
@@ -2314,8 +2322,8 @@ msgid "Default (Unicode)"
 msgstr "Standard (Unicode)"
 
 msgctxt "#31982"
-msgid "Lock position of focused item"
-msgstr "Position des fokussierten Eintrags fixieren"
+msgid "Show bookmarks"
+msgstr "Lesezeichen anzeigen"
 
 msgctxt "#31983"
 msgid "User rating overrides Kodi rating"
@@ -2358,5 +2366,5 @@ msgid "Prefer online artwork"
 msgstr "Online-Artwork bevorzugen"
 
 msgctxt "#31993"
-msgid "Timed change of color scheme"
+msgid "Timed change of colour scheme"
 msgstr "Zeitgesteuerter Wechsel des Farbschemas"

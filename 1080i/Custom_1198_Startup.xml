@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<!-- 09/2025 Updated splash screen to add TJF and to keep animation on for 4 seconds. -->
-
 <window type="window" id="1198">
     <animation effect="fade" start="100" end="0" time="500">WindowClose</animation>
  
@@ -28,18 +25,7 @@
 	            <animation effect="fade" start="100" end="0" time="500">WindowClose</animation>
                 <visible>String.IsEmpty(Skin.String(StartupPlaylist)) + String.IsEmpty(Skin.String(startupfanart.fallback))</visible>
             </control>
- <!-- TJF 09/2025 Slight Modification to the initial splash screen to indicate this is a TJF mod. -->
-            <control type="label">
-                <description>Loading</description>
-                <left>900</left>
-                <top>605</top>
-                <label>[I]with enhancements by Martin86 and TJF[/I]</label>
-                <font>MediumBold</font>
-                <textcolor>Dark1</textcolor>
-	            <animation effect="fade" start="100" end="0" time="2000">WindowClose</animation>
-                <visible>String.IsEmpty(Skin.String(StartupPlaylist)) + String.IsEmpty(Skin.String(startupfanart.fallback))</visible>
-            </control>
-<!--             <control type="image">
+            <control type="image">
                 <left>1020</left>
                 <top>605</top>
                 <width>331</width>
@@ -49,7 +35,7 @@
 	            <animation effect="fade" start="100" end="0" time="500">WindowClose</animation>
                 <visible>String.IsEmpty(Skin.String(StartupPlaylist)) + String.IsEmpty(Skin.String(startupfanart.fallback))</visible>
             </control>
-  -->           <control type="videowindow">
+            <control type="videowindow">
                 <visible>Player.HasVideo + !String.IsEmpty(Skin.String(StartupPlaylist))</visible>
                 <include>Dimensions_Fullscreen</include>
             </control>            
