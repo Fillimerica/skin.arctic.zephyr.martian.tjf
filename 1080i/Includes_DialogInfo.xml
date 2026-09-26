@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- TF 09/2026 DialogPVRInfoNavigation now is defined in this file. Moved one change to it's relative position in support of the
+DialogPVRInfo information screen customizations. -->
+
 <includes>
 
     <include name="DialogInfo_List_Header">
@@ -1394,7 +1397,8 @@
 
     <include name="DialogPVRInfoNavigation">
         <control type="grouplist" id="9000">
-            <top>28</top>
+<!-- TF 09/2026 Adjust top of navigation icon area to fit modified Info Dialog Layout -->
+            <top>900</top>
             <left>783</left>
             <right>SidePad</right>
             <include>listdimensions</include>
