@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- TF Enhancements to the seekbar display to show timeshift availability.
+Added more descriptive text to show live tv seek abilities, removed confusing show running real time display -->
+
 <includes>
+
+<!-- TF Added new gobal label include, incorporated into Seekbar1, Seekbar2, OSDInfoContent -->
+	<include name="OSDTimeshiftLabel">
+		<control type="label">
+			<bottom>80</bottom>
+			<width>100%</width>
+			<align>center</align>
+			<font>Tiny</font>
+			<textcolor>$VAR[OSDPanelWhite70]</textcolor>
+			<label>Can rewind to $INFO[Skin.String(CustomLiveTVPlaybackStart)] in show. $VAR[PlayerStatus] $INFO[PVR.TimeshiftOffset] behind LiveTV</label>
+			<visible>VideoPlayer.Content(LiveTV) + VideoPlayer.HasEpg</visible>
+		</control>
+    </include>
 
     <include name="OSDFocusStop">
         <defaultcontrol always="true">15</defaultcontrol>
@@ -142,6 +158,21 @@
             <height>8</height>
             <visible>Player.Seeking</visible>
         </control>
+<!-- TF 09/2026 Added Timeshift visual indicator to the seekbar -->
+		<control type="progress">
+			<left>0</left>
+			<bottom>18</bottom>
+			<width>100%</width>
+			<height>8</height>
+			<info2>PVR.TimeshiftProgressBufferStart</info2>
+			<info>PVR.TimeshiftProgressBufferEnd</info>
+			<lefttexture></lefttexture>
+			<midtexture colordiffuse="80FFFFFF">osd/progress-end.png</midtexture>
+			<righttexture></righttexture>
+			<overlaytexture></overlaytexture>
+			<visible>Player.SeekEnabled</visible>
+		</control>
+
         <control type="progress" id="404">
             <left>0</left>
             <bottom>10</bottom>
@@ -578,7 +609,7 @@
                     <height>40</height>
                     <font>Tiny</font>
                     <textcolor>$VAR[OSDPanelWhite70]</textcolor>
-                    <label>$VAR[LabelOSDPlayerTime]</label>
+                    <label>SIDEOSD $VAR[LabelOSDPlayerTime]</label>
                 </control>
             </control>
         </control>
@@ -2921,6 +2952,8 @@
                     </include>
 	            </control>
             </control>
+<!-- TF 09/2026 Added explicit timeshift timing display text to the OSD seek bar. -->
+			<include>OSDTimeshiftLabel</include>
         </control>
     </include>
      
@@ -3110,7 +3143,7 @@
                     </control>
                 </control>
             </control>
-            
+           
             <!-- Seekbar -->
             <control type="group">
                 <top>120r</top>
@@ -3212,11 +3245,13 @@
                     </include>
                 </control>
             </control>
-        </control>
-    </include>
-    
-    <include name="Seekbar3">
-        
+<!-- TF 09/2026 Added explicit timeshift timing display text to the OSD seek bar. -->
+			<include>OSDTimeshiftLabel</include>
+		</control>
+	</include>
+		
+	<include name="Seekbar3">
+
         <!-- Side OSD -->
         <control type="group">
             <animation effect="fade" start="100" end="0" time="150" condition="Window.IsVisible(DialogPlayerProcessInfo.xml)">Conditional</animation>

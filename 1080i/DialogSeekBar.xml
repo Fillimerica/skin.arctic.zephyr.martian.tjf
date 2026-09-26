@@ -9,6 +9,10 @@
     <onload condition="Player.Paused + !String.IsEmpty(Window(Home).Property(OSDExtendedInfo))">PlayerControl(Play)</onload>
     <onload condition="Player.Paused + !String.IsEmpty(Window(Home).Property(OSDExtendedInfo))">ClearProperty(OSDExtendedInfo,Home)</onload>
 
+<!-- TF 09/2026 Globally disable the confusing time remaining in show values on the right of the OSD.
+     This is accomplished with minimal changes to Includes_OSD by leveraging the existing check for ClockOSD. -->
+	<onload>Skin.SetBool(ClockOSD)</onload>
+
     <controls>
         <control type="group">
             <visible>String.IsEmpty(Window(Home).Property(OSDExtendedInfo))</visible>
@@ -21,6 +25,7 @@
         <include>ChannelNumberInput</include>
 
         <!-- Clock -->
-        <include>Furniture_OSDClock</include>
+<!-- TF 09/2026 Globally disable the confusing relative show value real time remaining OSD
+        <include>Furniture_OSDClock</include> -->
     </controls>
 </window>
